@@ -271,7 +271,7 @@ L.Control.Sidebar = L.Control.extend(/** @lends L.Control.Sidebar.prototype */ {
 
         return this;
     },
-
+/*
     isOpen: function() {
         return !L.DomUtil.hasClass(this.container, 'collapsed');
     },
