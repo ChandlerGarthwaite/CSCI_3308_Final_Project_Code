@@ -56,6 +56,8 @@
       <a href="Groups.html">Groups</a>
       <a href="Locations.html">Locations</a>
       <a href="CheckIn.html">Check In</a>
+      <a href="Profile.html">Profile</a>
+      <a href="login.html">Login</a>
     </div>
 
     <div>
@@ -150,7 +152,7 @@
           </div>
         </div>
       </div>
-    
+
       <!--Interactive Map-->
       <div id = "map" style = "width: 100%; height: 570px"></div>
       <script src="https://unpkg.com/leaflet/dist/leaflet.js" crossorigin=""></script>
@@ -161,7 +163,7 @@
           center: [40.0054, -105.2678],
           zoom: 16
         }
-        
+
         // New map object
         var map = new L.map('map', mapOptions);
 
@@ -175,7 +177,7 @@
           maxZoom: 19,
           minZoom: 15
         });
-          
+
 
         //Adding layer to home page
         map.addLayer(layer);
@@ -240,4 +242,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   </body>
 </html>
-
