@@ -22,29 +22,55 @@
           font-size: 3.5rem;
         }
       }
+      .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+      .navbar a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
     </style>
     <!-- Custom styles for this template -->
     <link href="../styles/signin.css" rel="stylesheet">
 	<link href="../styles/my_style.css" rel="stylesheet">
   </head>
   <body class="center text-center">
+    <div class="navbar">
+      <a><img class="rounded-circle" src="../img/TapStudy_logo.png" alt="" width="60" height="60"></a>
+      <a href="homePage.html">Home</a>
+      <a href="friends.html">Friends</a>
+      <a href="groups.html">Groups</a>
+      <a href="locations.html">Locations</a>
+      <a href="checkIn.html">Check In</a>
+      <a href="Profile.html">Profile</a>
+      <a href="login.html">Login</a>
+    </div>
     <form class="form-signin" action="HomePage.html">
-	  <img class="rounded-circle" src="img/TapStudy_logo.png" alt="" width="72" height="72">
-	  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-	  <label for="inputEmail" class="sr-only">Email address</label>
-	  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-	  <label for="inputPassword" class="sr-only">Password</label>
-	  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-	  <div class="checkbox mb-3">
-		<label>
-		  <input type="checkbox" value="remember-me"> Remember me |
-		</label>
-			<a href="">Forgot Password?</a>
-	  </div>
-	  <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
-	  <a class="btn btn-lg btn-primary" href="register.html">Register</a>
-	  <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-	</form>
+  	  <img class="rounded-circle" src="img/TapStudy_logo.png" alt="" width="72" height="72">
+  	  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  	  <label for="inputEmail" class="sr-only">Email address</label>
+  	  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+  	  <label for="inputPassword" class="sr-only">Password</label>
+  	  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  	  <div class="checkbox mb-3">
+  		<label>
+  		  <input type="checkbox" value="remember-me"> Remember me |
+  		</label>
+  			<a href="">Forgot Password?</a>
+  	  </div>
+  	  <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
+  	  <a class="btn btn-lg btn-primary" href="register.html">Register</a>
+  	  <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+	   </form>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
