@@ -2,23 +2,24 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 var pgp = require('pg-promise')();
 
 
-const dbConfig = {
-	host: 'localhost',
-	port: 5432,
-	database: 'tap-study',
-	user: 'harrisonayan',
-	password: 'harrison'
-};
+// const dbConfig = {
+// 	host: 'localhost',
+// 	port: 5432,
+// 	database: 'tap-study',
+// 	user: 'harrisonayan',
+// 	password: 'harrison'
+// };
+const dbConfig = process.env.DATABASE_URL;
 
 var db = pgp(dbConfig);
 
-
+app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));
 
 
@@ -56,6 +57,4 @@ app.post('/Home/user-submit', (req, res) => {
   });
 
 
-app.listen(3000, () => {
-  console.log('App running on port 3000.')
-})
+app.listen(process.env.PORT);
