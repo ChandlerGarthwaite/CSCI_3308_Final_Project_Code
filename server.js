@@ -34,11 +34,11 @@ app.post('/Home/user-submit', (req, res) => {
   var firstName = req.body.first_name;
   var lastName = req.body.last_name;
   var email = req.body.email_address;
-  var username = req.body.user_name;
+  var username = req.body.username;
   var date_of_birth = req.body.date_of_birth;
   var password = req.body.password_first;
 
-  var insert_statement = "INSERT INTO users_temp(first_name, last_name, email, username, password, date_of_birth) VALUES('" + firstName + "','" +
+  var insert_statement = "INSERT INTO users(first_name, last_name, email, username, password, date_of_birth) VALUES('" + firstName + "','" +
   lastName + "','" + email + "','" + username + "','" + password + "','" + date_of_birth + "');";
 
   db.any(insert_statement)
