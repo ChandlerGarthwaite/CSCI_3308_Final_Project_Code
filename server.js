@@ -57,6 +57,6 @@ app.post('/Home/user-submit', (req, res) => {
   });
 
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 3000, () => {
   console.log("Listening");
 });
