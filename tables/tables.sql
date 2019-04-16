@@ -6,7 +6,7 @@ create table "user"
   first_name        varchar(20) not null,
   last_name         varchar(20) not null,
   email             varchar(50) not null,
-  date_of_birth     integer     not null,
+  date_of_birth     date        not null,
   major             varchar(50),
   school_year       varchar(20),
   hometown          varchar(20),
