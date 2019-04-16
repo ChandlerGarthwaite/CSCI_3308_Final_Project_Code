@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+const PORT = process.env.PORT || 5000;
 
 var pgp = require('pg-promise')();
 
@@ -57,6 +57,6 @@ app.post('/Home/user-submit', (req, res) => {
   });
 
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(PORT, () => {
   console.log("Listening");
 });
