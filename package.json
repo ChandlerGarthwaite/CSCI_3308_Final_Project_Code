@@ -1,11 +1,26 @@
 {
-  "name": "tap-study",
+  "name": "tap-",
   "version": "1.0.0",
   "main": "server.js",
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "pg": "^7.9.0",
-    "pg-promise": "^8.6.5",
-  }
+    "pg-promise": "^8.6.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChandlerGarthwaite/CSCI_3308_Final_Project_Code.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChandlerGarthwaite/CSCI_3308_Final_Project_Code/issues"
+  },
+  "homepage": "https://github.com/ChandlerGarthwaite/CSCI_3308_Final_Project_Code#readme",
+  "description": ""
 }
