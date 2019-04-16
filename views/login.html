@@ -22,40 +22,43 @@
           font-size: 3.5rem;
         }
       }
-      .navbar {
-        overflow: hidden;
-        background-color: #333;
-        position: fixed;
-        top: 0;
-        width: 100%;
-      }
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+      top: 0;
+      width: 100%;
+      z-index: 1001;
+    }
 
-      .navbar a {
-        float: left;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-      }
+    .navbar a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 0px 0px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+
+    .main {
+      padding: 16px;
+      margin-top: 60px;
+      height: 1500px;
+    }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="../resources/css/signin.css" rel="stylesheet">
-	<link href="../resources/css/my_style.css" rel="stylesheet">
   </head>
-  <body class="center text-center">
+  <body>
     <div class="navbar">
-      <a><img class="rounded-circle" src="../resources/img/TapStudy_logo.png" alt="" width="60" height="60"></a>
+      <a><img src="../resources/img/TapStudypng.png" alt="" width="40" height="40"></a>
       <a href="homePage.html">Home</a>
-      <a href="friends.html">Friends</a>
-      <a href="groups.html">Groups</a>
-      <a href="locations.html">Locations</a>
-      <a href="checkIn.html">Check In</a>
+      <a href="Friends.html">Friends</a>
+      <a href="Groups.html">Groups</a>
+      <a href="Locations.html">Locations</a>
+      <a href="CheckIn.html">Check In</a>
       <a href="Profile.html">Profile</a>
       <a href="login.html">Login</a>
     </div>
     <form class="form-signin" action="HomePage.html">
-  	  <img class="rounded-circle" src="../resources/img/TapStudy_logo.png" alt="" width="72" height="72">
   	  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
   	  <label for="inputEmail" class="sr-only">Email address</label>
   	  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
