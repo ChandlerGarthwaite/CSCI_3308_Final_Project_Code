@@ -1,60 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <title>Home</title>
-    <link rel='icon' href='../resources/img/Tstudy.ico' type='image/x-icon'/>
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../resources/img/my_style.css">
-    <!--Leaflet-->
-    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<% include ../partials/header %>
+<% include ../partials/menu %>
 
-    <!--Sidebar-->
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" crossorigin=""/>
-
-    <link rel="stylesheet" href="../resources/css/leaflet-sidebar.css" />
-
-    <style>
-
-
-    body,html{
-    height: 100%;
-    margin:0;
-    }
-
-    .navbar {
-      overflow: hidden;
-      background-color: #333;
-      top: 0;
-      width: 100%;
-      z-index: 1001;
-    }
-
-    .navbar a {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 0px 0px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-
-
-    .main {
-      padding: 16px;
-      margin-top: 60px;
-      height: 1500px;
-    }
-    </style>
-  </head>
-  <% include ../partials/menu %>
   <body>
     <div style="width: 100%; height: 100%">
       <!--sidebar content-->
@@ -231,10 +177,4 @@
 
       </script>
     </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  </body>
-</html>
+<% include ../partials/footer %>

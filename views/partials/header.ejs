@@ -1,19 +1,56 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title><%= title %></title>
-
-	<link rel='icon' href='..resources/img/Tstudy.ico' type='image/x-icon'/>
+    <title>Home</title>
+    <link rel='icon' href='../resources/img/Tstudy.ico' type='image/x-icon'/>
     <!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	<% if(typeof local_css == 'string' && local_css){ %>
-	 <link href="../resources/css/<%=local_css%>" rel="stylesheet">
-	<% } %>
-    <!-- Custom styles for this template -->
-	<link href="../resources/css/my_style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../resources/img/my_style.css">
+    <!--Leaflet-->
+    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
+    <!--Sidebar-->
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" crossorigin=""/>
+
+    <link rel="stylesheet" href="../resources/css/leaflet-sidebar.css" />
+
+    <style>
+
+
+    body,html{
+    height: 100%;
+    margin:0;
+    }
+
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+      top: 0;
+      width: 100%;
+      z-index: 1001;
+    }
+
+    .navbar a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 0px 0px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+
+    .main {
+      padding: 16px;
+      margin-top: 60px;
+      height: 1500px;
+    }
+    </style>
   </head>
-  <body>
