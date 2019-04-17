@@ -3,19 +3,20 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 var pgp = require('pg-promise')();
 
 
-// const dbConfig = {
-// 	host: 'localhost',
-// 	port: 5432,
-// 	database: 'tap-study',
-// 	user: 'harrisonayan',
-// 	password: 'harrison'
-// };
-const dbConfig = process.env.DATABASE_URL;
+const dbConfig = {
+	host: 'localhost',
+	port: 5432,
+	database: 'tap-study',
+	user: 'harrisonayan',
+	password: 'harrison'
+};
+
+// const dbConfig = process.env.DATABASE_URL;
 
 var db = pgp(dbConfig);
 
@@ -25,7 +26,9 @@ app.use(express.static(__dirname + '/'));
 
 
 app.get('/',function(req,res){
-  res.sendFile(__dirname+'/views/register.html');
+  res.render('pages/register',{
+    title: "Register"
+  });
 });
 
 
