@@ -1,9 +1,10 @@
 <div class="navbar">
   <a><img src="../resources/img/TapStudypng.png" alt="" width="40" height="40"></a>
   <a href="/Home">Home</a>
-  <a href="CheckIn.html">Check In</a>
   <a class = "active" href="/Profile">Profile</a>
-  <a href="/Login">Login</a>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Check In!</button>
+  <button type="button" class="btn btn-primary">Log Out</button>
+
 </div>
 
 <style>
@@ -37,3 +38,27 @@ color: #f6db77;
   height: 1500px;
 }
 </style>
+			<div class="modal" id="exampleModal" tabindex="-1" role="dialog">
+  				<div class="modal-dialog" role="document">
+    				<div class="modal-content">
+      					<div class="modal-header">
+        					<h5 class="modal-title">
+        						Check In
+        					</h5>
+        					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          						<span aria-hidden="true">
+          							&times;
+          						</span>
+        					</button>
+      					</div>
+      					<div class="modal-body">
+        					<p>Locations</p>
+                  <p>Subject</p>
+      					</div>
+      					<div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Confirm</button>
+        					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      					</div>
+    				</div>
+  				</div>
+			</div>
