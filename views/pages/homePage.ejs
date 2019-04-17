@@ -1,33 +1,8 @@
 <% include ../partials/header %>
 <style>
-
 body,html{
 height: 100%;
 margin:0;
-}
-
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  top: 0;
-  width: 100%;
-  z-index: 1001;
-}
-
-.navbar a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 0px 0px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-
-.main {
-  padding: 16px;
-  margin-top: 60px;
-  height: 1500px;
 }
 </style>
 <% include ../partials/menu %>
@@ -136,76 +111,58 @@ margin:0;
           center: [40.0054, -105.2678],
           zoom: 16
         }
-
         // New map object
         var map = new L.map('map', mapOptions);
-
         var southWest = L.latLng(40.000, -105.277),
           northEast = L.latLng(40.015, -105.259),
           bounds = L.latLngBounds(southWest, northEast);
-
         // New layer object
         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxBounds: bounds,
           maxZoom: 19,
           minZoom: 15
         });
-
-
         //Adding layer to home page
         map.addLayer(layer);
-
-
         //Creating marker icon
         var bookIcon = L.icon({
           iconUrl: '../resources/img/bookIcon.png',
           iconSize: [40, 40]
         });
-
         //Markers with titles to each study location
         var norlinMarker = L.marker([40.00877, -105.27077], {
           icon: bookIcon,
           title: "Norlin Library"
         }).bindPopup("0 people studying here").openPopup().on('click', markerOnClick).addTo(map);
-
         var gemmillMarker = L.marker([40.00783, -105.26446], {
           icon: bookIcon,
           title: "Gemmill Math Library"
         }).bindPopup("0 people studying here").openPopup().on('click', markerOnClick).addTo(map);
-
         var bensonMarker = L.marker([40.00800, -105.26602], {
           icon: bookIcon,
           title: "Benson Earth Sciences"
         }).bindPopup("0 people studying here").openPopup().on('click', markerOnClick).addTo(map);
-
         var engMarker = L.marker([40.00714, -105.26276], {
           icon: bookIcon,
           title: "Engineering Building"
         }).bindPopup("0 people studying here").openPopup().on('click', markerOnClick).addTo(map);
-
         var wiseMarker = L.marker([40.00114, -105.26215], {
           icon: bookIcon,
           title: "Wise Law Library"
         }).bindPopup("0 people studying here").openPopup().on('click', markerOnClick).addTo(map);
-
         var koelbelMarker = L.marker([40.00569, -105.26347], {
           icon: bookIcon,
           title: "Koelbel Business Library"
         }).bindPopup("0 people studying here").openPopup().on('click', markerOnClick).addTo(map);
-
         var caseMarker = L.marker([40.00635, -105.27023], {
           icon: bookIcon,
           title: "CASE"
         }).bindPopup("0 people studying here").openPopup().on('click', markerOnClick).addTo(map);
-
-
         var sidebar = L.control.sidebar({ container: 'sidebar' }).addTo(map);
-
         function markerOnClick()
         {
           sidebar.open('home');
         }
-
       </script>
     </div>
 <% include ../partials/footer %>

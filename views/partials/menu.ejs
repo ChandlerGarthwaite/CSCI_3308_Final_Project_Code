@@ -1,7 +1,39 @@
 <div class="navbar">
   <a><img src="../resources/img/TapStudypng.png" alt="" width="40" height="40"></a>
-  <a href="homePage.html">Home</a>
+  <a href="/Home">Home</a>
   <a href="CheckIn.html">Check In</a>
-  <a href="Profile.html">Profile</a>
-  <a href="login.html">Login</a>
+  <a class = "active" href="/Profile">Profile</a>
+  <a href="/Login">Login</a>
 </div>
+
+<style>
+  body {margin:0;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+}
+
+.navbar a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 0px 0px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar .active {
+color: #f6db77;
+}
+
+
+.main {
+  padding: 16px;
+  margin-top: 60px;
+  height: 1500px;
+}
+</style>
