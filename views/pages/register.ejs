@@ -1,5 +1,94 @@
 <% include ../partials/header %>
+<style>
+  body {margin:0;}
 
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+  }
+
+  .navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0px 0px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+
+  .main {
+    padding: 16px;
+    margin-top: 60px;
+    height: 1500px;
+  }
+  </style>
+  <div class="navbar">
+    <a><img src="../resources/img/TapStudypng.png" alt="" width="40" height="40"></a>
+    <a href="homePage.html">Home</a>
+    <a href="Friends.html">Friends</a>
+    <a href="Groups.html">Groups</a>
+    <a href="Locations.html">Locations</a>
+    <a href="CheckIn.html">Check In</a>
+    <a href="Profile.html">Profile</a>
+    <a href="login.html">Login</a>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container">
+  <form action="/Home/user-submit" method="post">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="first_name">First Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="first_name" id="first_name"  placeholder="John">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="last_name">Last Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="last_name" id="last_name"  placeholder="Smith">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"  for="email_address">Email address</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" name="email_address" id="email_address" placeholder="johnsmith@gmail.com">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"  for="username">Username</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"  for="date_of_birth">Date of Birth</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" placeholder="mm-dd-yy">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label  class="col-sm-2 col-form-label" for="password_first">Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="password_first" name="password_first" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label  class="col-sm-2 col-form-label" for="password_confirm">Confirm Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="Confirm Password">
+      </div>
+    </div>
+    <input type="submit" value="submit" class="btn btn-primary btn-block">
+  </form>
+  <br>
+  </div>
 
 
 
