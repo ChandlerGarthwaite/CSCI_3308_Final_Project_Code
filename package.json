@@ -19,7 +19,7 @@
   },
   "author": "",
   "license": "ISC",
-  "engines":{
+  "engines": {
     "node": "11.4.0"
   },
   "bugs": {
