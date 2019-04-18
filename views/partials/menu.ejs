@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   body {margin:0;}
 
@@ -5,7 +6,7 @@
   overflow: hidden;
   background-color: #333;
   top: 0;
-  width: 100%;
+  //width: 100%;
   z-index: 1001;
 }
 
@@ -22,6 +23,11 @@
 color: #f6db77;
 }
 
+.active, .navbar:hover {
+  //background-color: #666;
+  color: #f6db77;
+}
+
 
 .main {
   padding: 16px;
@@ -32,11 +38,12 @@ color: #f6db77;
 </style>
 <div class="navbar">
   <a><img src="../resources/img/TapStudypng.png" alt="" width="40" height="40"></a>
-  <a href="/Home">Home</a>
-  <a href="/Profile">Profile</a>
+  <a class="navbar" href="/Home">Home</a>
+  <a class="navbar" href="/Profile">Profile</a>
   <button type="button" class="btn btn-primary" style='background-color:#333' data-toggle="modal" data-target="#exampleModal">Check In!</button>
   <button type="button" class="btn btn-primary" style='background-color:#333'>Log Out</button>
 </div>
+
 			<div class="modal" id="exampleModal" tabindex="-1" role="dialog">
   				<div class="modal-dialog" role="document">
     				<div class="modal-content">
