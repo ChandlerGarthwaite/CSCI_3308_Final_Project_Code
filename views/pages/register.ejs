@@ -13,93 +13,88 @@
 <div class="modal show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Tap Study</h5>
-        
-      </div>
-      <div class="modal-body">
-        <div class="container-fluid">
-          <div class="row">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Tap Study</h5>
+        </div>
 
-            <!--Register Portion-->
-              <div class="col-lg-6">
-                <div class="container">
-                  <form action="/Home/user-submit" method="post">
-                    <h1 class="h3 mb-3 font-weight-normal">Register</h1>
-                    <div class="form-group row">
-                      <label class="col-sm-2 col-form-label" for="first_name">First Name</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" name="first_name" id="first_name"  placeholder="John">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+
+              <!--Register Portion-->
+                <div class="col-lg-6">
+                  <div class="container">
+                    <form action="/Home/user-submit" method="post">
+                      <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="first_name">First Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="first_name" id="first_name"  placeholder="John">
+                        </div>
                       </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-sm-2 col-form-label" for="last_name">Last Name</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" name="last_name" id="last_name"  placeholder="Smith">
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="last_name">Last Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="last_name" id="last_name"  placeholder="Smith">
+                        </div>
                       </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-sm-2 col-form-label"  for="email_address">Email address</label>
-                      <div class="col-sm-10">
-                        <input type="email" class="form-control" name="email_address" id="email_address" placeholder="johnsmith@gmail.com">
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label"  for="email_address">Email address</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" name="email_address" id="email_address" placeholder="johnsmith@gmail.com">
+                        </div>
                       </div>
-                    </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label"  for="username">Username</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label"  for="date_of_birth">Date of Birth</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" placeholder="mm-dd-yy">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label  class="col-sm-2 col-form-label" for="password_first">Password</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="password_first" name="password_first" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label  class="col-sm-2 col-form-label" for="password_confirm">Confirm Password</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="Confirm Password">
+                        </div>
+                      </div>
+                      <input type="submit" value="Submit" class="btn btn-primary">
+                    </form>
+                    <br>
+                  </div>
+                </div>
+                <!--Sign In portion -->
+                <div class="vl"></div>
+                <div class="col-lg-6">
+                  <form class="form-signin" action="HomePage.html">
+                    <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
                     <div class="form-group row">
                       <label class="col-sm-2 col-form-label"  for="username">Username</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-sm-2 col-form-label"  for="date_of_birth">Date of Birth</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" placeholder="mm-dd-yy">
+                        <input type="text" class="form-control" name="return_username" id="return_username" placeholder="Username">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label  class="col-sm-2 col-form-label" for="password_first">Password</label>
                       <div class="col-sm-10">
-                        <input type="password" class="form-control" id="password_first" name="password_first" placeholder="Password">
+                        <input type="password" class="form-control" id="return_password" name="return_password" placeholder="Password">
                       </div>
                     </div>
-                    <div class="form-group row">
-                      <label  class="col-sm-2 col-form-label" for="password_confirm">Confirm Password</label>
-                      <div class="col-sm-10">
-                        <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="Confirm Password">
-                      </div>
-                    </div>
-                    <input type="submit" value="Submit" class="btn btn-primary">
-                  </form>
-                  <br>
+                    <input type="submit" value="Sign In" class="btn btn-primary">
+                   </form>
                 </div>
-              </div>
-              <!--Sign In portion -->
-              <div class="col-lg-6">
-                <form class="form-signin" action="HomePage.html">
-                  <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
-                  <div class="form-group row">
-                    <label class="col-sm-2 col-form-label"  for="username">Username</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="return_username" id="return_username" placeholder="Username">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label  class="col-sm-2 col-form-label" for="password_first">Password</label>
-                    <div class="col-sm-10">
-                      <input type="password" class="form-control" id="return_password" name="return_password" placeholder="Password">
-                    </div>
-                  </div>
-                  <input type="submit" value="Sign In" class="btn btn-primary">
-                 </form>
-              </div>
-          </div>
-      </div>
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
       </div>
     </div>
   </div>
