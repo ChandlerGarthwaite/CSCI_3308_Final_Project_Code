@@ -45,3 +45,13 @@ app.post('/',function(req,res){
   console.log(name+password);
   res.redirect('/Home');
 });
+
+app.post('/',function(req,res){
+  var firstName = req.body.first_name;
+  var lastName = req.body.last_name;
+  var email = req.body.email_address;
+  var username = req.body.username;
+  var dob = req.body.date_of_birth;
+  var password1 = req.body.password_first;
+  var password2 = req.body.password_confirm;
+});
