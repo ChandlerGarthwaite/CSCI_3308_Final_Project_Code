@@ -54,4 +54,7 @@ app.post('/',function(req,res){
   var dob = req.body.date_of_birth;
   var password1 = req.body.password_first;
   var password2 = req.body.password_confirm;
+  console.log(firstName+lastName); //testing this shit out
+
+  res.redirect('/Home');
 });

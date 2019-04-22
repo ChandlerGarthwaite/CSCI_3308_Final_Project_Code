@@ -1,3 +1,11 @@
+  var firstName = document.getElementById("first_name");
+  var lastName = document.getElementById("last_name");
+  var email = document.getElementsById("email_address");
+  var username = document.getElementById("username");
+  var dob = document.getElementsById("date_of_birth");
+  var password1 = document.getElementsById("password_first");
+  var password2 = document.getElementsById("password_confirm");
+
 function openModal() {
     /* Note that you do NOT have to do a document.getElementById anywhere in this exercise. Use the elements below */
     var myInput = document.getElementById("psw");
@@ -8,23 +16,16 @@ function openModal() {
 	var length = document.getElementById("length");
     var match = document.getElementById("match");
 
-  var firstName = document.getElementById("first_name");
-  var lastName = document.getElementById("last_name");
-  var email = document.getElementsById("email_address");
-  var username = document.getElementById("username");
-  var dob = document.getElementsById("date_of_birth");
-  var password1 = document.getElementsById("password_first");
-  var password2 = document.getElementsById("password_confirm");
 
 	// When the user starts to type something inside the password field
 	myInput.onkeyup = function() {
        console.log('helllooo')
 
         /* TODO: Question 1.1: Starts here */
-        var lowerCaseLetters = /dummy_regex/g; // : Fill in the regular experssion for lowerCaseLetters
-        var upperCaseLetters = /dummy_regex/g; // : Fill in the regular experssion for upperCaseLetters
-        var numbers = /dummy_regex/g; // : Fill in the regular experssion for digits
-        var minLength = 1000; // : Change the minimum length to what what it needs to be in the question
+        var lowerCaseLetters = /[a-z]/g; // : Fill in the regular experssion for lowerCaseLetters
+        var upperCaseLetters = /[A-Z]/g; // : Fill in the regular experssion for upperCaseLetters
+        var numbers = /[0-9]/g; // : Fill in the regular experssion for digits
+        var minLength = 8; // : Change the minimum length to what what it needs to be in the question
         /* TODO: Question 1.1: Ends here */
 
 
