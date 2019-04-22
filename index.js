@@ -37,3 +37,11 @@ app.get('/Login',function(req,res){
 app.listen(PORT, () => {
   console.log("Listening");
 });
+
+app.post('/',function(req,res){
+  var name = req.body.return_username;
+  var password = req.body.return_password;
+
+  console.log(name+password);
+  res.redirect('/Home');
+});
