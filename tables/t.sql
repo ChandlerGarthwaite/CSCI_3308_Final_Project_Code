@@ -17,3 +17,14 @@ create table "users"
   study_group       integer,
   picture           text
 );
+
+create table "users"
+(
+  user_id serial primary key,
+  first_name varchar(20),
+  last_name  varchar(20),
+  username   varchar(20),
+  password   varchar(20),
+  email      varchar(50)
+
+);

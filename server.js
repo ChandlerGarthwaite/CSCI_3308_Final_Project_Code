@@ -1,65 +1,72 @@
+// SET UP =========================================
+
 var express = require('express');
 var app = express();
+var port = process.env.PORT || 3000;
+var passport = require('passport');
+var flash = require('connect-flash');
+var pg = require('pg');
+
+var morgan = require('morgan');
+var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-const PORT = process.env.PORT || 3000;
+var session = require('express-session');
 
-var pgp = require('pg-promise')();
+// Database =======================================
 
+//***Connection to Heroku Database
+//var conString = process.env.DATABASE_URL;
+//var client = new pg.Client(conString);
 
-const dbConfig = {
-	host: 'localhost',
-	port: 5432,
-	database: 'tap-study',
+//***Connection to local database***
+var client = new pg.Client({
 	user: 'harrisonayan',
-	password: 'harrison'
-};
-
-// const dbConfig = process.env.DATABASE_URL;
-
-var db = pgp(dbConfig);
-
-app.set('view engine', 'ejs');
-app.use(express.static(__dirname + '/'));
+	host: 'localhost',
+	database: 'tap-study',
+	password: 'harrison',
+	port: 5432,
+});
 
 
-
-app.get('/',function(req,res){
-  res.render('pages/register',{
-    title: "Register"
-  });
+client.connect(function(err) {
+   if(err) {
+       return console.error('could not connect to postgres', err);
+   }
+   client.query('SELECT NOW() AS "theTime"', function(err, result) {
+       if(err) {
+           return console.error('error running query', err);
+       }
+       console.log(result.rows[0].theTime);
+   });
 });
 
 
 
-app.post('/Home/user-submit', (req, res) => {
-  var firstName = req.body.first_name;
-  var lastName = req.body.last_name;
-  var email = req.body.email_address;
-  var username = req.body.username;
-  var date_of_birth = req.body.date_of_birth;
-  var password = req.body.password_first;
-
-  var insert_statement = "INSERT INTO users(first_name, last_name, email, username, password, date_of_birth) VALUES('" + firstName + "','" +
-  lastName + "','" + email + "','" + username + "','" + password + "','" + date_of_birth + "');";
-
-  db.any(insert_statement)
-        .then(() => {
-        res.sendFile(__dirname+'/views/homePage.html',{
-        my_title: "Home Page",
-          })
-        })
-        .catch(error => {
-                console.log('error',error);
-              })
-  });
-
-  app.get('/Home/user-submit',function(req,res){
-    res.sendFile(__dirname+'/views/homePage.html');
-  });
+// CONFIGURATION =====================================
 
 
-app.listen(PORT, () => {
-  console.log("Listening");
+require('./config/passport')(passport);
+
+
+app.use(morgan('dev'));
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.set('view engine', 'ejs');
+
+app.use(session({ secret: 'secret'}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+app.use(express.static(__dirname + '/'));
+
+// ROUTES ============================================
+require('./app/routes.js')(app, passport);
+
+
+// LAUNCH ============================================
+//
+app.listen(port, () => {
+  console.log("Listening on port " + port);
 });
