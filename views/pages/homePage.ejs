@@ -35,24 +35,52 @@ margin:0;
               SideBar Panel 1
               <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
             </h1>
-            <!--Panel 1-->
+            <!--Benson Earth Sciences Library-->
             <div class="panel-group">
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a data-toggle="collapse" href="#norlin-panel">Norlin Library</a>
+                    <a data-toggle="collapse" href="#benson-panel">Benson Library</a>
                   </h4>
                 </div>
-                <div id="norlin-panel" class="panel-collapse collapse">
+                <div id="benson-panel" class="panel-collapse collapse">
                   <ul class="list-group">
-                    <li class="list-group-item">15 People Studying Math</li>
-                    <li class="list-group-item">9 People Studying Biology</li>
-                    <li class="list-group-item">17 People Studying Chemistry</li>
+                    <li class="list-group-item">x people studying y</li>
                   </ul>
                 </div>
               </div>
             </div>
-            <!--Panel 2-->
+            <!--CASE Building-->
+            <div class="panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#case-panel">CASE Building</a>
+                  </h4>
+                </div>
+                <div id="case-panel" class="panel-collapse collapse">
+                  <ul class="list-group">
+                    <li class="list-group-item">x people studying y</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--Engineering Center-->
+            <div class="panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#engineering-panel">Engineering Library</a>
+                  </h4>
+                </div>
+                <div id="engineering-panel" class="panel-collapse collapse">
+                  <ul class="list-group">
+                    <li class="list-group-item">x people studying y</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--Gemmill Math Library-->
             <div class="panel-group">
               <div class="panel panel-default">
                 <div class="panel-heading">
@@ -62,13 +90,12 @@ margin:0;
                 </div>
                 <div id="gemmill-panel" class="panel-collapse collapse">
                   <ul class="list-group">
-                    <li class="list-group-item">7 People Studying Math</li>
-                    <li class="list-group-item">5 People Studying Physics</li>
+                    <li class="list-group-item">x people studying y</li>
                   </ul>
                 </div>
               </div>
             </div>
-            <!--Panel 3-->
+            <!--Koelbel Business Library-->
             <div class="panel-group">
               <div class="panel panel-default">
                 <div class="panel-heading">
@@ -78,7 +105,37 @@ margin:0;
                 </div>
                 <div id="koelbel-panel" class="panel-collapse collapse">
                   <ul class="list-group">
-                    <li class="list-group-item">15 People Studying Business</li>
+                    <li class="list-group-item">x people studying y</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--Norlin Panel-->
+            <div class="panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#norlin-panel">Norlin Library</a>
+                  </h4>
+                </div>
+                <div id="norlin-panel" class="panel-collapse collapse">
+                  <ul class="list-group">
+                    <li class="list-group-item">x people studying y</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--Wise Law Library-->
+            <div class="panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#wise-panel">Wise Law Library</a>
+                  </h4>
+                </div>
+                <div id="wise-panel" class="panel-collapse collapse">
+                  <ul class="list-group">
+                    <li class="list-group-item">x people studying y</li>
                   </ul>
                 </div>
               </div>
@@ -120,7 +177,7 @@ margin:0;
         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxBounds: bounds,
           maxZoom: 19,
-          minZoom: 15
+          minZoom: 16
         });
         //Adding layer to home page
         map.addLayer(layer);
@@ -162,6 +219,7 @@ margin:0;
         function markerOnClick()
         {
           sidebar.open('home');
+          
         }
       </script>
     </div>
