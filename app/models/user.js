@@ -86,12 +86,12 @@ User.findOne = function(username, callback){
     if(result.rows.length > 0){
       notAvailable = true;
       console.log(username + ' is not available');
-      user.user_id = result.rows[0]['user_id'];
-      user.first_name = result.rows[0]['first_name'];
-      user.last_name = result.rows[0]['last_name'];
-      user.username = result.rows[0]['username'];
-      user.password = result.rows[0]['password'];
-      user.email = result.rows[0]['email'];
+      this.user_id = result.rows[0]['user_id'];
+      this.first_name = result.rows[0]['first_name'];
+      this.last_name = result.rows[0]['last_name'];
+      this.username = result.rows[0]['username'];
+      this.password = result.rows[0]['password'];
+      this.email = result.rows[0]['email'];
     }
     else{
       notAvailable = false;

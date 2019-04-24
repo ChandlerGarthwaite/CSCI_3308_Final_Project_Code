@@ -47,11 +47,11 @@ module.exports = function(passport) {
           console.log('new local user');
 
           var user = new User();
-          user.first_name = req.body.registerName;
-          //user.last_name = req.body.registerLast_name;
-          user.username = req.body.registerUsername;
-          user.password = req.body.registerPassword;
-          //user.email = req.body.registerEmail.
+          user.first_name = req.body.first_name;
+          user.last_name = req.body.last_name;
+          user.username = req.body.username;
+          user.password = req.body.password;
+          user.email = req.body.email;
 
           user.save(function(newUser) {
             console.log("the object user is : ", newUser);
