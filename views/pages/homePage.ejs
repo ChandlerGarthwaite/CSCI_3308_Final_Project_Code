@@ -1,10 +1,10 @@
 <% include ../partials/header %>
-<style>
+<!--style>
 body,html{
 height: 100%;
 margin:0;
 }
-</style>
+</style>-->
 <% include ../partials/menu %>
 
   <body>
@@ -230,6 +230,7 @@ margin:0;
 
         function markerOnClick(id)
         {
+
           if(sidebar.isOpen()) {
             if($(id).is('.collapse:not(.show)'))
             {
@@ -246,6 +247,9 @@ margin:0;
             sidebar.open('home');
             $(id).collapse('show');
           }
+
+          sidebar.open('home');
+
         }
         
         var sidebar = L.control.sidebar({ container: 'sidebar' }).addTo(map);
