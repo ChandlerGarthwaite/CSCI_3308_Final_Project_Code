@@ -4,111 +4,76 @@
   <br>
   <br>
   <br>
-  <!-- Button trigger modal -->
-<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button> -->
 
+<div class="header">
+  <h5 class="title" id="regTitle"><img src = "../resources/img/TapStudy_Title.png" height = "50px" style="display:block; position: fixed; top: -2px; margin-left: 40%; margin-right: 50%"></h5>
+</div>
 
-<!-- Modal -->
-<div class="modal show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><img src = "../resources/img/TapStudy_Title.png" height = "50px" style="display:block; left-margin:auto; right-margin:auto;"></h5>
-        </div>
+<!--Div centering the row of columns, everything is inside this div
+    next div is a row that contains 3 column divs for signin, sign up, password conf
+-->
+<div style="margin: auto;max-width: 1000px">
+  <div class="row" style="align-content: center;">
 
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div class="row">
+    <!--Sign In portion -->
+    <div class="col-lg-4" style="background-color: white">
+      <div class="container" >
 
-              <!--Register Portion-->
-                <div class="col-lg-6">
-                  <div class="container">
-                    <h1 class="h3 mb-3 font-weight-normal">Register</h1>
-                    <form action="/signup" method="post">
-                      <div class="form-group">
-            						<input type="text" class="form-control" name="registerName" placeholder="Full Name"
-            							required="required"><br>
-            						<input type="text" class="form-control" name="registerUsername" placeholder="Username"
-            							required="required"><br>
-            						<input id="psw" type="password" class="form-control" name="registerPassword" placeholder="Password"
-            							required="required"><br>
-            						<input id="cpsw" type="password" class="form-control" name="confirmpassword"
-            							placeholder="Confirm Password" required="required"><br>
-            						<button type="submit" id="my_submit_button" class="btn btn-primary btn-block login-btn">Sign Up</button>
-            					</div>
+          <form class="form-signin" action="/login" method = "get">
+            <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
 
-                      <!--<div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="first_name">First Name</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" name="first_name" id="first_name"  placeholder="John" required>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="last_name">Last Name</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" name="last_name" id="last_name"  placeholder="Smith" required>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label class="col-sm-2 col-form-label"  for="email_address">Email address</label>
-                        <div class="col-sm-10">
-                          <input type="email" class="form-control" name="email_address" id="email_address" placeholder="johnsmith@gmail.com" required>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label class="col-sm-2 col-form-label"  for="username">Username</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username" required>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label class="col-sm-2 col-form-label"  for="date_of_birth">Date of Birth</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" placeholder="mm-dd-yy" required>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label  class="col-sm-2 col-form-label" for="password_first">Password</label>
-                        <div class="col-sm-10">
-                          <input type="password" class="form-control" id="password_first" name="password_first" placeholder="Password" required>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label  class="col-sm-2 col-form-label" for="password_confirm">Confirm Password</label>
-                        <div class="col-sm-10">
-                          <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="Confirm Password" required>
-                        </div>
-                      </div>
-                      <input type="submit" value="Submit" class="btn btn-primary"> -->
-                    </form>
-                    <br>
-                  </div>
-                </div>
-                <!--Sign In portion -->
-                <div class="col-lg-6">
-                  <form class="form-signin">
-                    <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
-                    <div class="form-group row">
-                      <label class="col-sm-2 col-form-label"  for="username">Username</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" name="username" id="return_username" placeholder="Username" required>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label  class="col-sm-2 col-form-label" for="password_first">Password</label>
-                      <div class="col-sm-10">
-                        <input type="password" class="form-control" id="signinPassword" name="password" placeholder="Password" required>
-                      </div>
-                    </div>
-                    <button type="submit" formaction="/login" id="my_submit_button" class="btn btn-primary btn-block login-btn">Sign In</button>
-                   </form>
-                </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="username" id="return_username" placeholder="Username" required>
+              </div>
             </div>
-        </div>
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                  <input type="password" class="form-control" id="signinPassword" name="password" placeholder="Password" required>
+              </div>
+            </div>
+
+            <input type="submit" value="Sign In" class="btn btn-primary btn-block login-btn" style="width: 82.5%; height:auto">
+           </form>
       </div>
     </div>
+
+    <!--Register Portion-->
+    <div class="col-lg-4" style="background-color: white">
+      <div class="container">
+        <form action="/signup" method="post">
+          <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+          <div class="form-group">
+            <input id="first_name"type="text" class="form-control" name="first_name" placeholder="First Name"
+              required="required"><br>
+            <input id="last_name" type="text" class="form-control" name="last_name" placeholder="Last Name"
+              required="required"><br>
+            <input type="text" class="form-control" name="username" placeholder="Username"
+              required="required"><br>
+            <input id="email" type="email" class="form-control" name="email"
+              placeholder="Email" required="required"><br>
+            <input id="psw" type="password" class="form-control" name="password" placeholder="Password"
+              required="required"><br>
+            <input id="cpsw" type="password" class="form-control" name="confirmpassword"
+              placeholder="Confirm Password" required="required"><br>
+            <button type="submit" id="my_submit_button" class="btn btn-primary btn-block login-btn" disabled="true">Sign Up</button>
+          </div>
+        </form>
+        <br>
+      </div>
+    </div>
+
+    <!--Password portion -->
+    <div class="col-lg-4" style="background-color: white">
+        <h4>Password must contain the following:</h3>
+        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+        <p id="capital" class="invalid">An <b>uppercase</b> letter</p>
+        <p id="number" class="invalid">A <b>number</b></p>
+        <p id="plength" class="invalid">A minimum <b>8 characters</b></p>
+        <p id="match" class="invalid">Password and Confirm Password must match</p>
+    </div>
+
   </div>
 </div>
 

@@ -4,6 +4,7 @@ html, body{
     height:100%; /* important to vertically align the container */
     margin:0;
     padding:0;
+    overflow: scroll;
 }
 
 body {
@@ -49,4 +50,25 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -1;
+  content: "\2713";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -1;
+  content: "\2716";
 }
