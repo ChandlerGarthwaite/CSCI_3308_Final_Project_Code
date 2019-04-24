@@ -3,7 +3,7 @@ module.exports = function(app, passport) {
   //Home register/login page
   app.get('/', function(req, res) {
     res.render('pages/register.ejs', {
-      message: req.flash('loginMessage'),
+      //message: req.flash('loginMessage'),
       title: "Register/Login"
     });
   });
@@ -15,7 +15,7 @@ module.exports = function(app, passport) {
     failureFlash: true
   }));
   //register
-  app.post('/register', passport.authenticate('local-signup', {
+  app.post('/signup', passport.authenticate('local-signup', {
     successRedirect: '/home',
     failureRedirect: '/',
     failureFlash: true

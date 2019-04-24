@@ -37,8 +37,9 @@ module.exports = function(passport) {
     console.log('signup');
     process.nextTick(function(callback) {
       User.findOne(username, function(err, notAvailable, user) {
-        if (err)
+        if (err){
           return done(err);
+          console.log(err);}
         if (notAvailable == true){
           return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
         }

@@ -26,13 +26,13 @@
                 <div class="col-lg-6">
                   <div class="container">
                     <h1 class="h3 mb-3 font-weight-normal">Register</h1>
-                    <form action="/register" method="post">
+                    <form action="/signup" method="post">
                       <div class="form-group">
             						<input type="text" class="form-control" name="registerName" placeholder="Full Name"
             							required="required"><br>
-            						<input type="text" class="form-control" name="username" placeholder="Username"
+            						<input type="text" class="form-control" name="registerUsername" placeholder="Username"
             							required="required"><br>
-            						<input id="psw" type="password" class="form-control" name="password" placeholder="Password"
+            						<input id="psw" type="password" class="form-control" name="registerPassword" placeholder="Password"
             							required="required"><br>
             						<input id="cpsw" type="password" class="form-control" name="confirmpassword"
             							placeholder="Confirm Password" required="required"><br>
@@ -88,21 +88,21 @@
                 </div>
                 <!--Sign In portion -->
                 <div class="col-lg-6">
-                  <form class="form-signin" action="/login" method = "get">
+                  <form class="form-signin">
                     <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
                     <div class="form-group row">
                       <label class="col-sm-2 col-form-label"  for="username">Username</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="signinUsername" id="return_username" placeholder="Username" required>
+                        <input type="text" class="form-control" name="username" id="return_username" placeholder="Username" required>
                       </div>
                     </div>
                     <div class="form-group row">
                       <label  class="col-sm-2 col-form-label" for="password_first">Password</label>
                       <div class="col-sm-10">
-                        <input type="password" class="form-control" id="signinPassword" name="return_password" placeholder="Password" required>
+                        <input type="password" class="form-control" id="signinPassword" name="password" placeholder="Password" required>
                       </div>
                     </div>
-                    <input type="submit" value="Sign In" class="btn btn-primary">
+                    <button type="submit" formaction="/login" id="my_submit_button" class="btn btn-primary btn-block login-btn">Sign In</button>
                    </form>
                 </div>
             </div>
