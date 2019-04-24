@@ -247,6 +247,8 @@ L.Control.Sidebar = L.Control.extend(/** @lends L.Control.Sidebar.prototype */ {
         return this;
     },
 
+
+
     /**
      * Close the sidebar (if it's open).
      *
@@ -271,13 +273,13 @@ L.Control.Sidebar = L.Control.extend(/** @lends L.Control.Sidebar.prototype */ {
 
         return this;
     },
-/*
+
     isOpen: function() {
-        return !L.DomUtil.hasClass(this.container, 'collapsed');
+        return !L.DomUtil.hasClass(this._container, 'collapsed')
     },
 
     isClosed: function() {
-        return L.DomUtil.hasClass(this.container, 'collapsed');
+        return L.DomUtil.hasClass(this._container, 'collapsed')
     },
 
     /**

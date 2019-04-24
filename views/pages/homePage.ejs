@@ -26,114 +26,109 @@ margin:0;
               <li>
                 <a href="#settings" role="tab">
                   <i class="fa fa-gear"></i>
-                </a> -->
+                </a>--> 
             </ul>
         </div>
         <div class="leaflet-sidebar-content">
           <div class="leaflet-sidebar-pane" id="home">
             <h1 class="leaflet-sidebar-header">
-              SideBar Panel 1
+              Locations
               <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
             </h1>
-            <!--Benson Earth Sciences Library-->
-            <div class="panel-group">
+            <div class="panel-group" id="accordion">
+
+              <!--Benson Earth Sciences Library-->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h4 class="panel-title">
+                  <h2 class="panel-title">
                     <a data-toggle="collapse" href="#benson-panel">Benson Library</a>
-                  </h4>
+                  </h2>
                 </div>
-                <div id="benson-panel" class="panel-collapse collapse">
+                <div data-parent="#accordion" id="benson-panel" class="panel-collapse collapse in">
                   <ul class="list-group">
                     <li class="list-group-item">x people studying y</li>
                   </ul>
                 </div>
               </div>
-            </div>
-            <!--CASE Building-->
-            <div class="panel-group">
+            
+              <!--CASE Building-->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h4 class="panel-title">
+                  <h2 class="panel-title">
                     <a data-toggle="collapse" href="#case-panel">CASE Building</a>
-                  </h4>
+                  </h2>
                 </div>
-                <div id="case-panel" class="panel-collapse collapse">
+                <div data-parent="#accordion" id="case-panel" class="panel-collapse collapse in">
                   <ul class="list-group">
                     <li class="list-group-item">x people studying y</li>
                   </ul>
                 </div>
               </div>
-            </div>
-            <!--Engineering Center-->
-            <div class="panel-group">
+
+              <!--Engineering Center-->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h4 class="panel-title">
+                  <h2 class="panel-title">
                     <a data-toggle="collapse" href="#engineering-panel">Engineering Library</a>
-                  </h4>
+                  </h2>
                 </div>
-                <div id="engineering-panel" class="panel-collapse collapse">
+                <div data-parent="#accordion" id="engineering-panel" class="panel-collapse collapse">
                   <ul class="list-group">
                     <li class="list-group-item">x people studying y</li>
                   </ul>
                 </div>
               </div>
-            </div>
-            <!--Gemmill Math Library-->
-            <div class="panel-group">
+
+              <!--Gemmill Math Library-->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h4 class="panel-title">
+                  <h2 class="panel-title">
                     <a data-toggle="collapse" href="#gemmill-panel">Gemmill Library</a>
-                  </h4>
+                  </h2>
                 </div>
-                <div id="gemmill-panel" class="panel-collapse collapse">
+                <div data-parent="#accordion" id="gemmill-panel" class="panel-collapse collapse">
                   <ul class="list-group">
                     <li class="list-group-item">x people studying y</li>
                   </ul>
                 </div>
               </div>
-            </div>
-            <!--Koelbel Business Library-->
-            <div class="panel-group">
+
+              <!--Koelbel Business Library-->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h4 class="panel-title">
+                  <h2 class="panel-title">
                     <a data-toggle="collapse" href="#koelbel-panel">Koelbel Library</a>
-                  </h4>
+                  </h2>
                 </div>
-                <div id="koelbel-panel" class="panel-collapse collapse">
+                <div data-parent="#accordion" id="koelbel-panel" class="panel-collapse collapse">
                   <ul class="list-group">
                     <li class="list-group-item">x people studying y</li>
                   </ul>
                 </div>
               </div>
-            </div>
-            <!--Norlin Panel-->
-            <div class="panel-group">
+
+              <!--Norlin Panel-->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a data-toggle="collapse" href="#norlin-panel">Norlin Library</a>
-                  </h4>
+                  <h2 class="panel-title">
+                    <a id="norlin-anchor" data-toggle="collapse" href="#norlin-panel">Norlin Library</a>
+                  </h2>
                 </div>
-                <div id="norlin-panel" class="panel-collapse collapse">
+                <div data-parent="#accordion" id="norlin-panel" class="panel-collapse collapse">
                   <ul class="list-group">
                     <li class="list-group-item">x people studying y</li>
                   </ul>
                 </div>
               </div>
-            </div>
-            <!--Wise Law Library-->
-            <div class="panel-group">
+
+              <!--Wise Law Library-->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h4 class="panel-title">
+                  <h2 class="panel-title">
                     <a data-toggle="collapse" href="#wise-panel">Wise Law Library</a>
-                  </h4>
+                  </h2>
                 </div>
-                <div id="wise-panel" class="panel-collapse collapse">
+                <div data-parent="#accordion" id="wise-panel" class="panel-collapse collapse">
                   <ul class="list-group">
                     <li class="list-group-item">x people studying y</li>
                   </ul>
@@ -174,11 +169,14 @@ margin:0;
           northEast = L.latLng(40.015, -105.259),
           bounds = L.latLngBounds(southWest, northEast);
         // New layer object
+        
         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxBounds: bounds,
           maxZoom: 19,
           minZoom: 16
         });
+        
+
         //Adding layer to home page
         map.addLayer(layer);
         //Creating marker icon
@@ -190,37 +188,67 @@ margin:0;
         var norlinMarker = L.marker([40.00877, -105.27077], {
           icon: bookIcon,
           title: "Norlin Library"
-        }).bindPopup("0 people studying here").openPopup().on('click', markerOnClick).addTo(map);
+        }).bindPopup("0 people studying here").openPopup().on('click', function() {
+          markerOnClick("#norlin-panel");
+        }).addTo(map);
         var gemmillMarker = L.marker([40.00783, -105.26446], {
           icon: bookIcon,
           title: "Gemmill Math Library"
-        }).bindPopup("0 people studying here").openPopup().on('click', markerOnClick).addTo(map);
+        }).bindPopup("0 people studying here").openPopup().on('click', function() {
+          markerOnClick("#gemmill-panel");
+        }).addTo(map);
         var bensonMarker = L.marker([40.00800, -105.26602], {
           icon: bookIcon,
           title: "Benson Earth Sciences"
-        }).bindPopup("0 people studying here").openPopup().on('click', markerOnClick).addTo(map);
+        }).bindPopup("0 people studying here").openPopup().on('click', function() {
+          markerOnClick("#benson-panel");
+        }).addTo(map);
         var engMarker = L.marker([40.00714, -105.26276], {
           icon: bookIcon,
           title: "Engineering Building"
-        }).bindPopup("0 people studying here").openPopup().on('click', markerOnClick).addTo(map);
+        }).bindPopup("0 people studying here").openPopup().on('click', function() {
+          markerOnClick("#engineering-panel");
+        }).addTo(map);
         var wiseMarker = L.marker([40.00114, -105.26215], {
           icon: bookIcon,
           title: "Wise Law Library"
-        }).bindPopup("0 people studying here").openPopup().on('click', markerOnClick).addTo(map);
+        }).bindPopup("0 people studying here").openPopup().on('click', function() {
+          markerOnClick("#wise-panel");
+        }).addTo(map);
         var koelbelMarker = L.marker([40.00569, -105.26347], {
           icon: bookIcon,
           title: "Koelbel Business Library"
-        }).bindPopup("0 people studying here").openPopup().on('click', markerOnClick).addTo(map);
+        }).bindPopup("0 people studying here").openPopup().on('click', function() {
+          markerOnClick("#koelbel-panel");
+        }).addTo(map);
         var caseMarker = L.marker([40.00635, -105.27023], {
           icon: bookIcon,
           title: "CASE"
-        }).bindPopup("0 people studying here").openPopup().on('click', markerOnClick).addTo(map);
-        var sidebar = L.control.sidebar({ container: 'sidebar' }).addTo(map);
-        function markerOnClick()
+        }).bindPopup("0 people studying here").openPopup().on('click', function() {
+          markerOnClick("#case-panel");
+        }).addTo(map);
+
+        function markerOnClick(id)
         {
-          sidebar.open('home');
-          
+          if(sidebar.isOpen()) {
+            if($(id).is('.collapse:not(.show)'))
+            {
+              $(id).collapse('show');
+            }
+            else
+            {
+              $(id).collapse('hide');
+              sidebar.close();
+            }
+          }
+          else
+          {
+            sidebar.open('home');
+            $(id).collapse('show');
+          }
         }
+        
+        var sidebar = L.control.sidebar({ container: 'sidebar' }).addTo(map);
       </script>
     </div>
 <% include ../partials/footer %>
