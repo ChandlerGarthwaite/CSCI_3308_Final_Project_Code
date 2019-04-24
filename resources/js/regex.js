@@ -64,9 +64,9 @@ $(document).ready(function() {
     // TODO: Clear this function for students to implement    
     var button = document.getElementById('my_submit_button');
     if((match.classList.value == "valid")&&(letter.classList.value == "valid")&&(capital.classList.value == "valid")&&(number.classList.value == "valid")&&(plength.classList.value == "valid")){
-        condition = true;
+        var condition = true;
     }
-    else{false;} // TODO: Replace false with the correct condition
+    else{condition = false;} // TODO: Replace false with the correct condition
     if(condition) {       
             button.disabled = false;
         }        
@@ -75,6 +75,3 @@ $(document).ready(function() {
     }
     }    
 });
-
-
-
