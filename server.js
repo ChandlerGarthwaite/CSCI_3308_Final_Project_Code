@@ -27,7 +27,6 @@ var client = new pg.Client({
   port: 5432,
 });
 
-
 client.connect(function(err) {
    if(err) {
        return console.error('could not connect to postgres', err);

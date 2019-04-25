@@ -6,12 +6,13 @@ var pg = require('pg');
 
 //***Connection to local database***
 var client = new pg.Client({
-	user: 'harrisonayan',
-	host: 'localhost',
-	database: 'harrisonayan',
-	password: 'harrison',
-	port: 5432,
+  user: 'harrisonayan',
+  host: 'localhost',
+  database: 'harrisonayan',
+  password: 'harrison',
+  port: 5432,
 });
+
 
 function User(){
   this.user_id = 0;
@@ -31,6 +32,7 @@ function User(){
       password: 'harrison',
       port: 5432,
     });
+
     client.connect();
 
     console.log(this.username + ' will be saved');
@@ -73,7 +75,8 @@ User.findOne = function(username, callback){
     database: 'harrisonayan',
     password: 'harrison',
     port: 5432,
-  }); 
+  });
+  
 
   var notAvailable = false;
   console.log(username + ' findOne function test');
@@ -113,6 +116,7 @@ User.findById = function(id, callback){
     password: 'harrison',
     port: 5432,
   });
+  
   console.log('find by id');
 
   client.connect();
