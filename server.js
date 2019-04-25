@@ -20,11 +20,11 @@ var session = require('express-session');
 
 //***Connection to local database***
 var client = new pg.Client({
-	user: 'harrisonayan',
-	host: 'localhost',
-	database: 'tap-study',
-	password: 'harrison',
-	port: 5432,
+  user: 'harrisonayan',
+  host: 'localhost',
+  database: 'harrisonayan',
+  password: 'harrison',
+  port: 5432,
 });
 
 
