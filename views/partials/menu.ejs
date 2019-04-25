@@ -58,17 +58,33 @@ color: #f6db77;
           <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">
+                  <h1 class="modal-title">
                     Check In
                   </h5>
                 </div>
                 <div class="modal-body">
-                  <p>Locations</p>
-                  <p>Subject</p>
+                  <h3>Select Location:</h4>
+                  <div class="card-body mx-auto">
+                    <form class="form">
+                      <select class="custom-select" name="locations" onchange="this.form.submit()">
+                         <option selected>Select Study Location</option>
+                      </select>
+                    </form>
+                  </div>
+
+                  <h3>Select Subject:</h4>                  
+                  <div class="card-body mx-auto">
+                    <form class="form">
+                      <select class="custom-select" name="subjects" onchange="this.form.submit()">
+                         <option selected>Select Subject</option>
+                      </select>
+                    </form>
+                  </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Confirm</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+                <div class="modal-footer" >
+                  <button type="button" class="btn btn-primary" style="padding: 12px 86px;;background-color: green;" data-dismiss="modal">Confirm</button>
+                  <button type="button" class="btn btn-primary" style="padding: 12px 86px;;background-color: red;" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
           </div>

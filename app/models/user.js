@@ -6,10 +6,10 @@ var pg = require('pg');
 
 //***Connection to local database***
 var client = new pg.Client({
-  user: 'harrisonayan',
+  user: 'maxmarfuggi',
   host: 'localhost',
-  database: 'harrisonayan',
-  password: 'harrison',
+  database: 'maxmarfuggi',
+  password: '72117211',
   port: 5432,
 });
 
@@ -26,10 +26,10 @@ function User(){
     //var conString = process.env.DATABASE_URL;
     //var client = new pg.Client(conString);
     var client = new pg.Client({
-      user: 'harrisonayan',
+      user: 'maxmarfuggi',
       host: 'localhost',
-      database: 'harrisonayan',
-      password: 'harrison',
+      database: 'maxmarfuggi',
+      password: '72117211',
       port: 5432,
     });
 
@@ -70,10 +70,10 @@ User.findOne = function(username, callback){
   //var client = new pg.Client(conString);
 
   var client = new pg.Client({
-    user: 'harrisonayan',
+    user: 'maxmarfuggi',
     host: 'localhost',
-    database: 'harrisonayan',
-    password: 'harrison',
+    database: 'maxmarfuggi',
+    password: '72117211',
     port: 5432,
   });
   
@@ -110,13 +110,13 @@ User.findById = function(id, callback){
   //var client = new pg.Client(conString);
   
   var client = new pg.Client({
-    user: 'harrisonayan',
+    user: 'maxmarfuggi',
     host: 'localhost',
-    database: 'harrisonayan',
-    password: 'harrison',
+    database: 'maxmarfuggi',
+    password: '72117211',
     port: 5432,
   });
-  
+    
   console.log('find by id');
 
   client.connect();

@@ -12,7 +12,6 @@ var client = new pg.Client({
   password: 'harrison',
   port: 5432,
 });
-
 var User = require('../app/models/user');
 
 module.exports = function(passport) {
