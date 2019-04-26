@@ -1,18 +1,92 @@
 <% include ../partials/header %>
 <% include ../partials/menu %>
-    <br>
-    <br>
-    <br>
+<style>
+
+.modal-login {
+  color: #636363;
+  width: 350px;
+}
+.modal-login .modal-content {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+.modal-login .modal-header {
+  border-bottom: none;
+  position: relative;
+  justify-content: center;
+}
+.modal-login h4 {
+  text-align: center;
+  font-size: 26px;
+  margin: 30px 0 -15px;
+}
+.modal-login .form-control:focus {
+  border-color: #70c5c0;
+}
+.modal-login .form-control, .modal-login .btn {
+  min-height: 40px;
+  border-radius: 3px;
+}
+.modal-login .close {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.modal-login .modal-footer {
+  background: #ecf0f1;
+  border-color: #dee4e7;
+  text-align: center;
+  justify-content: center;
+  margin: 0 -20px -20px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+
+.modal-login.modal-dialog {
+  margin-top: 2%;
+}
+.modal-login .btn {
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.4s;
+  line-height: normal;
+  border: none;
+}
+.modal-login .btn:hover, .modal-login .btn:focus {
+  background: #45aba6;
+  outline: none;
+}
+.trigger-btn {
+  display: inline-block;
+  margin: 100px auto;
+}
+
+/* Style all input fields */
+input {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-top: 3px;
+margin-bottom: 8px;
+}
+</style>
     <br>
     <br>
     <div class="container" style="background-color: white">
 		<br>
+    <br>
+    <br>
 		<div class="row">
 			<div class="col-4">
 				<div class="card">
   					<img class="card-img-top" src="../resources/img/noImage.png" alt="Image of user" height="300px" width="300px">
 				</div>
-				<button class="btn btn-primary">Edit Profile</button>
 			</div>
 			<div class="col-8" style="background-color: white">
 				<table class="table table-striped" style="height: auto">
@@ -36,9 +110,46 @@
 					</tr>
 
 				</table>
-
-			</div>
+        <a href="#editProfile" class="btn btn-info" data-toggle="modal" onclick="openModal()">Edit Profile</a>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
 		</div>
-
 	</div>
+
+  <div id="editProfile" class="modal fade">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"><%- username %></h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <form class="" action="/profile/edit" method="post">
+        <div class="modal-body">
+          <div class="form-group">
+            <h6>Name:</h6>
+            <input type="text" name="name" placeholder=<%- name %> required="required">
+          </div>
+          <div class="form-group">
+            <h6>Major:</h6>
+            <input type="text" name="major" placeholder=<%- major %> required="required">
+          </div>
+          <div class="form-group">
+            <h6>Grade:</h6>
+            <input type="text" name="grade" placeholder=<%- grade %> required="required">
+          </div>
+          <div class="form-group">
+            <h6>Hometown:</h6>
+            <input type="text" name="hometown" placeholder=<%- hometown %> required="required">
+          </div>
+          <div class="form-group">
+            <button type="submit" id="edit_profile_submit" class="btn btn-primary btn-block">Submit</button>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
 <% include ../partials/footer %>
