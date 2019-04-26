@@ -8,7 +8,7 @@ var pg = require('pg');
 var client = new pg.Client({
   user: 'harrisonayan',
   host: 'localhost',
-  database: 'harrisonayan',
+  database: 'tap-study',
   password: 'harrison',
   port: 5432,
 });
@@ -27,7 +27,7 @@ function User(){
     var client = new pg.Client({
       user: 'harrisonayan',
       host: 'localhost',
-      database: 'harrisonayan',
+      database: 'tap-study',
       password: 'harrison',
       port: 5432,
     });
@@ -36,7 +36,7 @@ function User(){
 
     console.log(this.username + ' will be saved');
 
-    client.query('INSERT INTO users(first_name, last_name, username, password, email) VALUES($1, $2, $3, $4, $5)', [this.first_name, this.last_name, this.username, this.password, this.email], function (err, result) {
+    client.query('INSERT INTO users(first_name, last_name, username, password, email, study_status) VALUES($1, $2, $3, $4, $5, $6)', [this.first_name, this.last_name, this.username, this.password, this.email, false], function (err, result) {
       if (err){
         console.log(err);
         return console.error('error running query(user.save): ', err);
@@ -71,11 +71,11 @@ User.findOne = function(username, callback){
   var client = new pg.Client({
     user: 'harrisonayan',
     host: 'localhost',
-    database: 'harrisonayan',
+    database: 'tap-study',
     password: 'harrison',
     port: 5432,
   });
-    
+
 
   var notAvailable = false;
   console.log(username + ' findOne function test');
@@ -83,7 +83,7 @@ User.findOne = function(username, callback){
 
   client.query('SELECT * FROM users WHERE username=$1', [username], function(err, result) {
     if (err){
-      return callback(err, available, this);
+      return callback(err, notAvailable, this);
     }
     if(result.rows.length > 0){
       notAvailable = true;
@@ -107,15 +107,15 @@ User.findOne = function(username, callback){
 User.findById = function(id, callback){
   //var conString = process.env.DATABASE_URL;
   //var client = new pg.Client(conString);
-  
+
   var client = new pg.Client({
     user: 'harrisonayan',
     host: 'localhost',
-    database: 'harrisonayan',
+    database: 'tap-study',
     password: 'harrison',
     port: 5432,
   });
-    
+
   console.log('find by id');
 
   client.connect();

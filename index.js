@@ -15,6 +15,9 @@ app.get('/',function(req,res){
     title: "Register"
   });
 });
+app.get('/logout',function(req,res){
+  res.redirect('/');
+});
 
 app.get('/Home',function(req,res){
   res.render('pages/homePage',{
@@ -24,7 +27,13 @@ app.get('/Home',function(req,res){
 
 app.get('/Profile',function(req,res){
   res.render('pages/Profile',{
-    title: "Profile"
+    title: "Profile",
+    name: "N.A.",
+    username: "N.A.",
+    study_status: "N.A.",
+    major: "N.A.",
+    grade: "N.A.",
+    hometown: "N.A."
   });
 });
 

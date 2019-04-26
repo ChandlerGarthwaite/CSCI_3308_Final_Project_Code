@@ -22,7 +22,7 @@ var session = require('express-session');
 var client = new pg.Client({
   user: 'harrisonayan',
   host: 'localhost',
-  database: 'harrisonayan',
+  database: 'tap-study',
   password: 'harrison',
   port: 5432,
 });
@@ -54,11 +54,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs');
 
+app.use(express.static(__dirname + '/'));
 app.use(session({ secret: 'secret'}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-app.use(express.static(__dirname + '/'));
+
 
 // ROUTES ============================================
 require('./app/routes.js')(app, passport);

@@ -8,7 +8,7 @@ var pg = require('pg');
 var client = new pg.Client({
   user: 'harrisonayan',
   host: 'localhost',
-  database: 'harrisonayan',
+  database: 'tap-study',
   password: 'harrison',
   port: 5432,
 });

@@ -25,6 +25,10 @@ create table "users"
   last_name  varchar(20),
   username   varchar(20),
   password   varchar(20),
-  email      varchar(50)
-
+  email      varchar(50),
+  study_status boolean,
+  major      varchar(50),
+  grade      varchar(20),
+  hometown   varchar(20),
+  study_group int
 );
