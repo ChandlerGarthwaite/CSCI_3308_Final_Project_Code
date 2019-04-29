@@ -3,7 +3,7 @@ module.exports = function(app, passport) {
   var Locations = require('../app/models/locations');
   //***Connection to Heroku Database
   var conString = process.env.DATABASE_URL;
-  var client = new pg.Client(conString);
+  var pool = new pg.Pool(conString);
 
   //***Connection to local database***
   // var pool = new pg.Pool({
