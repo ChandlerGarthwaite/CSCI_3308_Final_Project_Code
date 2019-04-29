@@ -18,10 +18,17 @@ app.get('/',function(req,res){
 app.get('/logout',function(req,res){
   res.redirect('/');
 });
-
+var a = ['0']
 app.get('/Home',function(req,res){
   res.render('pages/homePage',{
-    title: "Home"
+    title: "Home",
+    benson: a,
+    case_: a,
+    engineering: a,
+    gemmill: a,
+    koelbel: a,
+    norlin: a,
+    wise: a
   });
 });
 
