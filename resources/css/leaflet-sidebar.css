@@ -105,6 +105,7 @@
   overflow-y: hidden; }
 
 .leaflet-sidebar-pane {
+  overflow-y:auto;
   display: none;
   left: 0;
   right: 0;

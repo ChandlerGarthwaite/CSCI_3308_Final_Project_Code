@@ -35,14 +35,14 @@ margin:0;
               Locations
               <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
             </h1>
-            <div class="button-group" id="accordion">
+            <div class="panel-group" id="accordion">
 
               <!--Benson Earth Sciences Library-->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h2 class="panel-title">
+                  <h3 class="panel-title">
                     <a data-toggle="collapse" href="#benson-panel">Benson Library</a>
-                  </h2>
+                  </h3>
                 </div>
                 <div data-parent="#accordion" id="benson-panel" class="panel-collapse collapse in" style="background-color: rgba(0,0,0,0);">
                   <% if (benson && benson.length) { %>
@@ -58,9 +58,9 @@ margin:0;
               <!--CASE Building-->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h2 class="panel-title">
+                  <h3 class="panel-title">
                     <a data-toggle="collapse" href="#case-panel">CASE Building</a>
-                  </h2>
+                  </h3>
                 </div>
                 <div data-parent="#accordion" id="case-panel" class="panel-collapse collapse in">
                   <% if (case_ && case_.length) { %>
@@ -76,9 +76,9 @@ margin:0;
               <!--Engineering Center-->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h2 class="panel-title">
+                  <h3 class="panel-title">
                     <a data-toggle="collapse" href="#engineering-panel">Engineering Library</a>
-                  </h2>
+                  </h3>
                 </div>
                 <div data-parent="#accordion" id="engineering-panel" class="panel-collapse collapse">
                   <% if (engineering && engineering.length) { %>
@@ -94,9 +94,9 @@ margin:0;
               <!--Gemmill Math Library-->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h2 class="panel-title">
+                  <h3 class="panel-title">
                     <a data-toggle="collapse" href="#gemmill-panel">Gemmill Library</a>
-                  </h2>
+                  </h3>
                 </div>
                 <div data-parent="#accordion" id="gemmill-panel" class="panel-collapse collapse">
                   <% if (gemmill && gemmill.length) { %>
@@ -113,9 +113,9 @@ margin:0;
               <hr>
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h2 class="panel-title">
+                  <h3 class="panel-title">
                     <a data-toggle="collapse" href="#koelbel-panel">Koelbel Library</a>
-                  </h2>
+                  </h3>
                 </div>
                 <div data-parent="#accordion" id="koelbel-panel" class="panel-collapse collapse">
                   <% if (koelbel && koelbel.length) { %>
@@ -131,9 +131,9 @@ margin:0;
               <!--Norlin Panel-->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h2 class="panel-title">
+                  <h3 class="panel-title">
                     <a id="norlin-anchor" data-toggle="collapse" href="#norlin-panel">Norlin Library</a>
-                  </h2>
+                  </h3>
                 </div>
                 <div data-parent="#accordion" id="norlin-panel" class="panel-collapse collapse">
                   <% if (norlin && norlin.length) { %>
@@ -149,9 +149,9 @@ margin:0;
               <!--Wise Law Library-->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h2 class="panel-title">
+                  <h3 class="panel-title">
                     <a data-toggle="collapse" href="#wise-panel">Wise Law Library</a>
-                  </h2>
+                  </h3>
                 </div>
                 <div data-parent="#accordion" id="wise-panel" class="panel-collapse collapse">
                   <% if (wise && wise.length) { %>
@@ -183,7 +183,7 @@ margin:0;
       </div>
 
       <!--Interactive Map-->
-      <div id = "map" style = "width: 100%; height: 100%"></div>
+      <div id = "map" style = "position: absolute; width: 100%; height: 100%"></div>
       <script src="https://unpkg.com/leaflet/dist/leaflet.js" crossorigin=""></script>
       <script src="../resources/js/leaflet-sidebar.js"></script>
       <script>
@@ -276,8 +276,6 @@ margin:0;
             sidebar.open('home');
             $(id).collapse('show');
           }
-
-          sidebar.open('home');
 
         }
         var sidebar = L.control.sidebar({ container: 'sidebar' }).addTo(map);
