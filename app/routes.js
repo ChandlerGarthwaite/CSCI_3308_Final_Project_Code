@@ -36,8 +36,7 @@ module.exports = function(app, passport) {
 
 
   app.get('/home', isLoggedIn, function(req, res) {
-    var conString = process.env.DATABASE_URL;
-    var pool = new pg.Pool(conString);
+
     // var pool = new pg.Pool({
     //   user: 'harrisonayan',
     //   host: 'localhost',
@@ -82,9 +81,9 @@ module.exports = function(app, passport) {
 
 
   app.get('/profile', isLoggedIn, function(req, res) {
-    pool.connect();
+    client.connect();
     var name = req.user.first_name + ' ' + req.user.last_name;
-    pool.query('SELECT * FROM users WHERE user_id=$1', [req.user.user_id], function(err, result) {
+    client.query('SELECT * FROM users WHERE user_id=$1', [req.user.user_id], function(err, result) {
       if(err) {
         return err;
       } else {
@@ -102,7 +101,7 @@ module.exports = function(app, passport) {
             grade = 'N.A.';
           if(hometown == null)
             hometown = 'N.A.';
-
+            client.end();
           res.render('pages/profile.ejs' , {
             user: req.user,
             title: "Profile",
@@ -126,12 +125,13 @@ module.exports = function(app, passport) {
     var grade = req.body.grade;
     var hometown = req.body.hometown;
 
-    pool.query('UPDATE users SET first_name = $1, last_name = $2, major = $3, grade = $4, hometown = $5 WHERE user_id = $6', [first_name, last_name, major, grade, hometown, req.user.user_id], function(err, result) {
+    client.query('UPDATE users SET first_name = $1, last_name = $2, major = $3, grade = $4, hometown = $5 WHERE user_id = $6', [first_name, last_name, major, grade, hometown, req.user.user_id], function(err, result) {
       if (err){
         return err;
       } else {
         req.user.first_name = first_name;
         req.user.last_name = last_name;
+        client.end();
       }
     });
     res.redirect('/profile');
