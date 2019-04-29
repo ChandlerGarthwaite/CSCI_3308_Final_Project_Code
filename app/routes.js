@@ -176,7 +176,7 @@ app.post('/home/checkin', function(req, res) {
     console.log('ss');
     if(currentGroup == true){
 
-      pool.query('UPDATE groups SET members = members || $1 WHERE group_id = $2',[id,group_id], function(err, result) {
+      client.query('UPDATE groups SET members = members || $1 WHERE group_id = $2',[id,group_id], function(err, result) {
         if(err){
           return err;
           console.log(err);
@@ -188,7 +188,7 @@ app.post('/home/checkin', function(req, res) {
     }
     else {
       console.log(user_id,subject,id);
-      pool.query('INSERT INTO groups(members,subject, location) VALUES($1,$2, $3)',[user_id,subject,id], function(err, result) {
+      client.query('INSERT INTO groups(members,subject, location) VALUES($1,$2, $3)',[user_id,subject,id], function(err, result) {
         if(err){
           return err;
           console.log(err);

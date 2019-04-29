@@ -21,16 +21,10 @@ create table locations
   name          varchar(50),
   groups integer[]
 );
-
+INSERT INTO users(first_name,last_name,username,password,email) VALUES ('Harrison','Ayan','hayan','Harr1son','harrisonayan@gmail.com');
 INSERT INTO locations(name) VALUES ('Benson Library'), ('CASE Building'),('Engineering Library'),('Gemmill Library'), ('KoelBel Library'), ('Norlin Library'), ('Wise Law Library');
 
-create table groups
-(
-  group_id serial primary key,
-  members int[],
-  subject varchar(50),
-  location int
-);
+
 
 INSERT INTO groups(members,subject, location) VALUES('{23}','MATH', '6');
 INSERT INTO groups(members,subject, location) VALUES('{2}','Sciences', '6');
