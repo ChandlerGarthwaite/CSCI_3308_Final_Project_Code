@@ -2,17 +2,17 @@ module.exports = function(app, passport) {
   var pg = require('pg');
   var Locations = require('../app/models/locations');
   //***Connection to Heroku Database
-  //var conString = process.env.DATABASE_URL;
-  //var client = new pg.Client(conString);
+  var conString = process.env.DATABASE_URL;
+  var client = new pg.Client(conString);
 
   //***Connection to local database***
-  var pool = new pg.Pool({
-    user: 'harrisonayan',
-    host: 'localhost',
-    database: 'tap-study',
-    password: 'harrison',
-    port: 5432,
-  });
+  // var pool = new pg.Pool({
+  //   user: 'harrisonayan',
+  //   host: 'localhost',
+  //   database: 'tap-study',
+  //   password: 'harrison',
+  //   port: 5432,
+  // });
   //Home register/login page
   app.get('/', function(req, res) {
     res.render('pages/register.ejs', {
@@ -36,15 +36,15 @@ module.exports = function(app, passport) {
 
 
   app.get('/home', isLoggedIn, function(req, res) {
-    //var conString = process.env.DATABASE_URL;
-    //var client = new pg.Client(conString);
-    var pool = new pg.Pool({
-      user: 'harrisonayan',
-      host: 'localhost',
-      database: 'tap-study',
-      password: 'harrison',
-      port: 5432,
-    });
+    var conString = process.env.DATABASE_URL;
+    var pool = new pg.Pool(conString);
+    // var pool = new pg.Pool({
+    //   user: 'harrisonayan',
+    //   host: 'localhost',
+    //   database: 'tap-study',
+    //   password: 'harrison',
+    //   port: 5432,
+    // });
 
 
 
@@ -140,15 +140,15 @@ module.exports = function(app, passport) {
 );
 
 app.post('/home/checkin', function(req, res) {
-  //var conString = process.env.DATABASE_URL;
-  //var client = new pg.Client(conString);
-  var client = new pg.Client({
-    user: 'harrisonayan',
-    host: 'localhost',
-    database: 'tap-study',
-    password: 'harrison',
-    port: 5432,
-  });
+  var conString = process.env.DATABASE_URL;
+  var client = new pg.Client(conString);
+  // var client = new pg.Client({
+  //   user: 'harrisonayan',
+  //   host: 'localhost',
+  //   database: 'tap-study',
+  //   password: 'harrison',
+  //   port: 5432,
+  // });
   var location = req.body.locations;
   var subject = req.body.subjects;
   var user = req.user.user_id;

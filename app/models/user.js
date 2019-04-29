@@ -1,17 +1,17 @@
 var pg = require('pg');
 
-//***Connection to Heroku Database
-//var conString = process.env.DATABASE_URL;
-//var client = new pg.Client(conString);
+// ***Connection to Heroku Database
+var conString = process.env.DATABASE_URL;
+var client = new pg.Client(conString);
 
 //***Connection to local database***
-var client = new pg.Client({
-  user: 'harrisonayan',
-  host: 'localhost',
-  database: 'tap-study',
-  password: 'harrison',
-  port: 5432,
-});
+// var client = new pg.Client({
+//   user: 'harrisonayan',
+//   host: 'localhost',
+//   database: 'tap-study',
+//   password: 'harrison',
+//   port: 5432,
+// });
 
 function User(){
   this.user_id = 0;
@@ -22,15 +22,15 @@ function User(){
   this.email = "";
 
   this.save = function(callback) {
-    //var conString = process.env.DATABASE_URL;
-    //var client = new pg.Client(conString);
-    var client = new pg.Client({
-      user: 'harrisonayan',
-      host: 'localhost',
-      database: 'tap-study',
-      password: 'harrison',
-      port: 5432,
-    });
+    var conString = process.env.DATABASE_URL;
+    var client = new pg.Client(conString);
+    // var client = new pg.Client({
+    //   user: 'harrisonayan',
+    //   host: 'localhost',
+    //   database: 'tap-study',
+    //   password: 'harrison',
+    //   port: 5432,
+    // });
 
     client.connect();
 
@@ -65,16 +65,16 @@ function User(){
 }
 
 User.findOne = function(username, callback){
-  //var conString = process.env.DATABASE_URL;
-  //var client = new pg.Client(conString);
+  var conString = process.env.DATABASE_URL;
+  var client = new pg.Client(conString);
 
-  var client = new pg.Client({
-    user: 'harrisonayan',
-    host: 'localhost',
-    database: 'tap-study',
-    password: 'harrison',
-    port: 5432,
-  });
+  // var client = new pg.Client({
+  //   user: 'harrisonayan',
+  //   host: 'localhost',
+  //   database: 'tap-study',
+  //   password: 'harrison',
+  //   port: 5432,
+  // });
 
 
   var notAvailable = false;
@@ -105,16 +105,16 @@ User.findOne = function(username, callback){
 };
 
 User.findById = function(id, callback){
-  //var conString = process.env.DATABASE_URL;
-  //var client = new pg.Client(conString);
+  var conString = process.env.DATABASE_URL;
+  var client = new pg.Client(conString);
 
-  var client = new pg.Client({
-    user: 'harrisonayan',
-    host: 'localhost',
-    database: 'tap-study',
-    password: 'harrison',
-    port: 5432,
-  });
+  // var client = new pg.Client({
+  //   user: 'harrisonayan',
+  //   host: 'localhost',
+  //   database: 'tap-study',
+  //   password: 'harrison',
+  //   port: 5432,
+  // });
 
   console.log('find by id');
 

@@ -15,17 +15,17 @@ var session = require('express-session');
 // Database =======================================
 
 //***Connection to Heroku Database
-//var conString = process.env.DATABASE_URL;
-//var client = new pg.Client(conString);
+var conString = process.env.DATABASE_URL;
+var client = new pg.Client(conString);
 
 //***Connection to local database***
-var client = new pg.Client({
-  user: 'harrisonayan',
-  host: 'localhost',
-  database: 'tap-study',
-  password: 'harrison',
-  port: 5432,
-});
+// var client = new pg.Client({
+//   user: 'harrisonayan',
+//   host: 'localhost',
+//   database: 'tap-study',
+//   password: 'harrison',
+//   port: 5432,
+// });
 
 client.connect(function(err) {
    if(err) {

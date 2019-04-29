@@ -1,17 +1,17 @@
 var pg = require('pg');
 
 //***Connection to Heroku Database
-//var conString = process.env.DATABASE_URL;
-//var client = new pg.Client(conString);
+var conString = process.env.DATABASE_URL;
+var client = new pg.Client(conString);
 
 //***Connection to local database***
-var client = new pg.Client({
-  user: 'harrisonayan',
-  host: 'localhost',
-  database: 'tap-study',
-  password: 'harrison',
-  port: 5432,
-});
+// var client = new pg.Client({
+//   user: 'harrisonayan',
+//   host: 'localhost',
+//   database: 'tap-study',
+//   password: 'harrison',
+//   port: 5432,
+// });
 
 Locations = new Object();
   Locations.benson = [];
@@ -32,16 +32,16 @@ Locations = new Object();
 
 
 Locations.getGroupInfo = function(callback) {
-  //var conString = process.env.DATABASE_URL;
-  //var client = new pg.Client(conString);
+  var conString = process.env.DATABASE_URL;
+  var client = new pg.Client(conString);
 
-  var client = new pg.Client({
-    user: 'harrisonayan',
-    host: 'localhost',
-    database: 'tap-study',
-    password: 'harrison',
-    port: 5432,
-  });
+  // var client = new pg.Client({
+  //   user: 'harrisonayan',
+  //   host: 'localhost',
+  //   database: 'tap-study',
+  //   password: 'harrison',
+  //   port: 5432,
+  // });
   client.connect();
 
   client.query('SELECT * FROM groups ORDER BY location', null, function(err, result) {
@@ -86,16 +86,16 @@ Locations.getGroupInfo = function(callback) {
 };
 
 Locations.getGroupId = function(subject, id,callback) {
-  //var conString = process.env.DATABASE_URL;
-  //var client = new pg.Client(conString);
+  var conString = process.env.DATABASE_URL;
+  var client = new pg.Client(conString);
 
-  var client = new pg.Client({
-    user: 'harrisonayan',
-    host: 'localhost',
-    database: 'tap-study',
-    password: 'harrison',
-    port: 5432,
-  });
+  // var client = new pg.Client({
+  //   user: 'harrisonayan',
+  //   host: 'localhost',
+  //   database: 'tap-study',
+  //   password: 'harrison',
+  //   port: 5432,
+  // });
   client.connect();
   var currentGroup = false
   client.query('SELECT * FROM groups WHERE subject=$1 AND location=$2',[subject, id], function(err, result) {
