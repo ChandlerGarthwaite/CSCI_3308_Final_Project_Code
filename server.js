@@ -11,7 +11,7 @@ var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-
+var Locations = require('../app/models/locations');
 // Database =======================================
 
 //***Connection to Heroku Database
