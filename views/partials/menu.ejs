@@ -62,35 +62,42 @@ color: #f6db77;
                     Check In
                   </h1>
                 </div>
+                <form id="checkinForm"class="form" action="/home/checkin" method="post">
                 <div class="modal-body">
+
                   <h3>Select Location:</h3>
                   <div class="card-body mx-auto">
-                    <form class="form">
-                      <select class="custom-select" name="locations" onchange="this.form.submit()">
+
+                      <select class="custom-select" name="locations" >
                          <option selected>Select Study Location</option>
+                         <option value="Benson">Benson Library</option>
+                         <option value="CASE">CASE Building</option>
+                         <option value="Engineering">Engineering Library</option>
+                         <option value="Gemmill">Gemmill Library</option>
+                         <option value="KoelBel">KoelBel Library</option>
+                         <option value="Norlin">Norlin Library</option>
+                         <option value="Wise">Wise Law Library</option>
                       </select>
-                    </form>
                   </div>
 
                   <h3>Select Subject:</h3>
                   <div class="card-body mx-auto">
-                    <form class="form">
-                      <select class="custom-select" name="subjects" onchange="this.form.submit()">
+                      <select class="custom-select" name="subjects">
                          <option selected>Select Subject</option>
-                         <option>Math</option>
-                         <option>Science</option>
-                         <option>English</option>
-                         <option>Writing</option>
-                         <option>Computer Science</option>
+                         <option value="Math">Math</option>
+                         <option value="Science">Science</option>
+                         <option value="English">English</option>
+                         <option value="Writing">Writing</option>
+                         <option value="CS">Computer Science</option>
                       </select>
-                    </form>
                   </div>
                 </div>
 
                 <div class="modal-footer" >
-                  <button type="button" class="btn btn-primary" style="padding: 12px 86px;;background-color: green;" data-dismiss="modal">Confirm</button>
+                  <button onclick="this.form.submit()" id="submitBtn"class="btn btn-primary" style="padding: 12px 86px;;background-color: green;" data-dismiss="modal">Confirm</button>
                   <button type="button" class="btn btn-primary" style="padding: 12px 86px;;background-color: red;" data-dismiss="modal">Cancel</button>
                 </div>
+              </form>
             </div>
           </div>
       </div>

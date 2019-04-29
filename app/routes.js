@@ -65,7 +65,14 @@ module.exports = function(app, passport) {
           gemmill: locations.gemmill,
           koelbel: locations.koelbel,
           norlin: locations.norlin,
-          wise: locations.wise
+          wise: locations.wise,
+          bensonCount:locations.bensonCount
+          // case_Count:locations.case_Count,
+          // engineeringCount:locations.engineeringCount,
+          // gemillCount:locations.gemmillCount,
+          // koelbelCount:locations.koelbelCount,
+          // norlinCount:locations.norinCount,
+          // wiseCount:locations.wiseCount
         });
       }
     });
@@ -131,6 +138,71 @@ module.exports = function(app, passport) {
 
   }
 );
+
+app.post('/home/checkin', function(req, res) {
+  //var conString = process.env.DATABASE_URL;
+  //var client = new pg.Client(conString);
+  var client = new pg.Client({
+    user: 'harrisonayan',
+    host: 'localhost',
+    database: 'tap-study',
+    password: 'harrison',
+    port: 5432,
+  });
+  var location = req.body.locations;
+  var subject = req.body.subjects;
+  var user = req.user.user_id;
+  var user_id = [];
+  user_id.push(user);
+  var id = 0;
+  if(location == 'Benson')
+    id = 1;
+  if(location == 'CASE')
+    id = 2;
+  if(location == 'Engineering')
+    id = 3;
+  if(location == 'Gemmill')
+    id = 4;
+  if(location == 'KoelBel')
+    id = 5;
+  if(location == 'Norlin')
+    id = 6;
+  if(location == 'Wise')
+    id = 7;
+
+  client.connect();
+  console.log('get');
+  Locations.getGroupId(subject, id, function(currentGroup, group_id) {
+    console.log('ss');
+    if(currentGroup == true){
+
+      pool.query('UPDATE groups SET members = members || $1 WHERE group_id = $2',[id,group_id], function(err, result) {
+        if(err){
+          return err;
+          console.log(err);
+        } else {
+          client.end();
+          res.redirect('/home');
+        }
+      });
+    }
+    else {
+      console.log(user_id,subject,id);
+      pool.query('INSERT INTO groups(members,subject, location) VALUES($1,$2, $3)',[user_id,subject,id], function(err, result) {
+        if(err){
+          return err;
+          console.log(err);
+        } else{
+          client.end();
+          console.log('y');
+          res.redirect('/home');
+        }
+      });
+    }
+  });
+  console.log(location);
+  console.log(subject);
+});
 
   app.get('/logout', function(req, res) {
     req.logout();
