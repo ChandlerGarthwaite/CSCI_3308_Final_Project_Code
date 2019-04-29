@@ -3,7 +3,7 @@ module.exports = function(app, passport) {
   var Locations = require('../app/models/locations');
   //***Connection to Heroku Database
   var conString = process.env.DATABASE_URL;
-  var pool = new pg.Pool(conString);
+  var client = new pg.Client(conString);
 
   //***Connection to local database***
   // var pool = new pg.Pool({
@@ -81,6 +81,7 @@ module.exports = function(app, passport) {
 
 
   app.get('/profile', isLoggedIn, function(req, res) {
+
     client.connect();
     var name = req.user.first_name + ' ' + req.user.last_name;
     client.query('SELECT * FROM users WHERE user_id=$1', [req.user.user_id], function(err, result) {
