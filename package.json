@@ -19,7 +19,9 @@
     "pg": "^7.9.0",
     "pg-promise": "^8.6.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"

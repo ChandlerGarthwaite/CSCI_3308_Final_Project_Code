@@ -45,9 +45,13 @@ margin:0;
                   </h2>
                 </div>
                 <div data-parent="#accordion" id="benson-panel" class="panel-collapse collapse in" style="background-color: rgba(0,0,0,0);">
-                  <ul class="list-group">
-                    <li class="list-group-item">x people studying y</li>
-                  </ul>
+                  <% if (benson && benson.length) { %>
+                    <ul class="list-group">
+                      <% benson.forEach((item) => { %>
+                        <li class="list-group-item"><%= item %></li>
+                        <% }); %>
+                    </ul>
+                  <% } %>
                 </div>
               </div>
               <hr>
@@ -59,9 +63,13 @@ margin:0;
                   </h2>
                 </div>
                 <div data-parent="#accordion" id="case-panel" class="panel-collapse collapse in">
-                  <ul class="list-group">
-                    <li class="list-group-item">x people studying y</li>
-                  </ul>
+                  <% if (case_ && case_.length) { %>
+                    <ul class="list-group">
+                      <% case_.forEach((item) => { %>
+                        <li class="list-group-item"><%= item %></li>
+                        <% }); %>
+                    </ul>
+                  <% } %>
                 </div>
               </div>
               <hr>
@@ -73,9 +81,13 @@ margin:0;
                   </h2>
                 </div>
                 <div data-parent="#accordion" id="engineering-panel" class="panel-collapse collapse">
-                  <ul class="list-group">
-                    <li class="list-group-item">x people studying y</li>
-                  </ul>
+                  <% if (engineering && engineering.length) { %>
+                    <ul class="list-group">
+                      <% engineering.forEach((item) => { %>
+                        <li class="list-group-item"><%= item %></li>
+                        <% }); %>
+                    </ul>
+                  <% } %>
                 </div>
               </div>
               <hr>
@@ -87,9 +99,13 @@ margin:0;
                   </h2>
                 </div>
                 <div data-parent="#accordion" id="gemmill-panel" class="panel-collapse collapse">
-                  <ul class="list-group">
-                    <li class="list-group-item">x people studying y</li>
-                  </ul>
+                  <% if (gemmill && gemmill.length) { %>
+                    <ul class="list-group">
+                      <% gemmill.forEach((item) => { %>
+                        <li class="list-group-item"><%= item %></li>
+                        <% }); %>
+                    </ul>
+                  <% } %>
                 </div>
               </div>
 
@@ -102,9 +118,13 @@ margin:0;
                   </h2>
                 </div>
                 <div data-parent="#accordion" id="koelbel-panel" class="panel-collapse collapse">
-                  <ul class="list-group">
-                    <li class="list-group-item">x people studying y</li>
-                  </ul>
+                  <% if (koelbel && koelbel.length) { %>
+                    <ul class="list-group">
+                      <% koelbel.forEach((item) => { %>
+                        <li class="list-group-item"><%= item %></li>
+                        <% }); %>
+                    </ul>
+                  <% } %>
                 </div>
               </div>
               <hr>
@@ -116,9 +136,13 @@ margin:0;
                   </h2>
                 </div>
                 <div data-parent="#accordion" id="norlin-panel" class="panel-collapse collapse">
-                  <ul class="list-group">
-                    <li class="list-group-item">x people studying y</li>
-                  </ul>
+                  <% if (norlin && norlin.length) { %>
+                    <ul class="list-group">
+                      <% norlin.forEach((item) => { %>
+                        <li class="list-group-item"><%= item %></li>
+                        <% }); %>
+                    </ul>
+                  <% } %>
                 </div>
               </div>
               <hr>
@@ -130,9 +154,13 @@ margin:0;
                   </h2>
                 </div>
                 <div data-parent="#accordion" id="wise-panel" class="panel-collapse collapse">
-                  <ul class="list-group">
-                    <li class="list-group-item">x people studying y</li>
-                  </ul>
+                  <% if (wise && wise.length) { %>
+                    <ul class="list-group">
+                      <% wise.forEach((item) => { %>
+                        <li class="list-group-item"><%= item %></li>
+                        <% }); %>
+                    </ul>
+                  <% } %>
                 </div>
               </div>
             </div>
@@ -153,7 +181,7 @@ margin:0;
           </div>
         </div>
       </div>
-      
+
       <!--Interactive Map-->
       <div id = "map" style = "width: 100%; height: 100%"></div>
       <script src="https://unpkg.com/leaflet/dist/leaflet.js" crossorigin=""></script>

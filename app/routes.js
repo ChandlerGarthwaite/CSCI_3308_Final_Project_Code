@@ -1,6 +1,6 @@
 module.exports = function(app, passport) {
   var pg = require('pg');
-
+  var Locations = require('../app/models/locations');
   //***Connection to Heroku Database
   //var conString = process.env.DATABASE_URL;
   //var client = new pg.Client(conString);
@@ -34,13 +34,45 @@ module.exports = function(app, passport) {
     failureFlash: true
   }));
 
+
   app.get('/home', isLoggedIn, function(req, res) {
-    res.render('pages/homePage.ejs' ,{
-      user: req.user,
-      title: "Home"
+    //var conString = process.env.DATABASE_URL;
+    //var client = new pg.Client(conString);
+    var pool = new pg.Pool({
+      user: 'harrisonayan',
+      host: 'localhost',
+      database: 'tap-study',
+      password: 'harrison',
+      port: 5432,
     });
+
+
+
+
+    Locations.getGroupInfo(function(err, locations) {
+      if( err){
+        console.log(err);
+      }
+      else {
+        console.log('norlin:' ,locations.case_);
+
+        res.render('pages/homePage.ejs' ,{
+          user: req.user,
+          title: "Home",
+          benson: locations.benson,
+          case_: locations.case_,
+          engineering: locations.engineering,
+          gemmill: locations.gemmill,
+          koelbel: locations.koelbel,
+          norlin: locations.norlin,
+          wise: locations.wise
+        });
+      }
+    });
+      });
+
     //console.log(req.user);
-  });
+
 
   app.get('/profile', isLoggedIn, function(req, res) {
     pool.connect();
@@ -105,6 +137,8 @@ module.exports = function(app, passport) {
     res.redirect('/');
   });
 };
+
+
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
