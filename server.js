@@ -151,7 +151,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
         if(hometown == null)
           hometown = 'N.A.';
           client.end();
-        res.render('/pages/Profile.ejs' , {
+        res.render('pages/Profile.ejs' , {
           user: req.user,
           title: "Profile",
           name: name,
