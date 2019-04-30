@@ -62,10 +62,10 @@ app.post('/',function(req,res){
 });
 
 app.post('/',function(req,res){
-  var user_firstName = req.body.first_name;
-  var user_lastName = req.body.last_name;
-  var user_email = req.body.email_address;
-  var user_username = req.body.username;
+  user_firstName: req.body.first_name;
+  user_lastName: req.body.last_name;
+  user_email: req.body.email_address;
+  user_username: req.body.username;
   var dob = req.body.date_of_birth;
   var password1 = req.body.password_first;
   var password2 = req.body.password_confirm;
