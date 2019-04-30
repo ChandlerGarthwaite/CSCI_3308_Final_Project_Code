@@ -8,6 +8,17 @@ const PORT = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));
 
+//database stuff
+var pgp = require('pg-promise')(); //tells us that we require a package "include in cpp"
+const dataConfig = {
+  host:'ec2-23-21-129-125.compute-1.amazonaws.com',
+  port:5432,
+  database:'dascpeq1f0kbsn',
+  user:'jnmadpypccwlav',
+  password:'7d02bf39afeb7eb08f38c0c923a67509390fcf0c1e945a9e4b55733025df0ed0',
+  ssl:true
+};
+var db = pgp(dataConfig);
 
 
 app.get('/',function(req,res){
@@ -19,6 +30,7 @@ app.get('/logout',function(req,res){
   res.redirect('/');
 });
 var a = ['0']
+
 app.get('/Home',function(req,res){
   res.render('pages/homePage',{
     title: "Home",
@@ -61,17 +73,36 @@ app.post('/',function(req,res){
   res.redirect('/Home');
 });
 
-app.post('/',function(req,res){
-  user_firstName: req.body.first_name;
-  user_lastName: req.body.last_name;
-  user_email: req.body.email_address;
-  user_username: req.body.username;
-  var dob = req.body.date_of_birth;
+app.post('/registerPost',function(req,res){
+  var user_firstName = req.body.first_name;
+  var user_lastName = req.body.last_name;
+  var user_email = req.body.email_address;
+  var user_username = req.body.username;
   var password1 = req.body.password_first;
   var password2 = req.body.password_confirm;
   var user_major = req.body.major;
-  var user_year = req.body.year;
+  var user_year = req;
   console.log(firstName+lastName); //testing this shit out
 
+  var selectStatement = "SELECT * FROM users WHERE username = '"+user_username+"';"; //checks if the user already exists
+  var insertStatement = "INSERT INTO users(first_name, last_name, username, password, email, major, grade)"
+  +" VALUES ('"+user_firstName+"','"+user_lastName+"','"+user_username+"','"+password1+"','"+user_email+"','"+user_major+"','"+user_year+"');";
+  db.task('put-user',task =>{
+    return task.batch([
+      task.any(selectStatement)
+    ]);
+    .then(info => {
+      if(!info[0]){
+        db.task('put-user',task =>{
+          return task.batch([
+            task.any(selectStatement)
+          ]);
+          .then(somethingElse =>{
+            console.log("MOTHAFUCKA REGISTERED");
+          })
+        }
+      }
+    })
+  })
   res.redirect('/Home');
 });
