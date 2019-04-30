@@ -45,18 +45,14 @@
         <form action="/signup" method="post">
           <h1 class="h3 mb-3 font-weight-normal">Register</h1>
           <div class="form-group">
-            <input id="first_name"type="text" class="form-control" name="first_name" placeholder="First Name"
-              required="required"><br>
-            <input id="last_name" type="text" class="form-control" name="last_name" placeholder="Last Name"
-              required="required"><br>
-            <input type="text" class="form-control" name="username" placeholder="Username"
-              required="required"><br>
-            <input id="email" type="email" class="form-control" name="email"
-              placeholder="Email" required="required"><br>
-            <input id="psw" type="password" class="form-control" name="password" placeholder="Password"
-              required="required"><br>
-            <input id="cpsw" type="password" class="form-control" name="confirmpassword"
-              placeholder="Confirm Password" required="required"><br>
+            <input id="first_name"type="text" class="form-control" name="first_name" placeholder="First Name" required="required"><br>
+            <input id="last_name" type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"><br>
+            <input type="text" class="form-control" name="username" placeholder="Username" required="required"><br>
+            <input id="email" type="email" class="form-control" name="email" placeholder="Email" required="required"><br>
+            <input id="major" class="form-control" name="major" palceholder="Major" reqired="required"><br>
+            <input id="year" class="form-control" name="year" placeholder="Year" required="required"><br>
+            <input id="psw" type="password" class="form-control" name="password" placeholder="Password" required="required"><br>
+            <input id="cpsw" type="password" class="form-control" name="confirmpassword" placeholder="Confirm Password" required="required"><br>
             <button type="submit" id="my_submit_button" class="btn btn-primary btn-block login-btn" disabled="true">Sign Up</button>
           </div>
         </form>
@@ -66,7 +62,7 @@
 
     <!--Password portion -->
     <div class="col-lg-4" style="background-color: white">
-        <h4>Password must contain the following:</h3>
+        <h4>Password must contain the following:</h4>
         <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
         <p id="capital" class="invalid">An <b>uppercase</b> letter</p>
         <p id="number" class="invalid">A <b>number</b></p>
