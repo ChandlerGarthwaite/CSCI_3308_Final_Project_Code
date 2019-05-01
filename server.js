@@ -20,7 +20,7 @@ db.query('SELECT NOW()', null, (err, res) => {
   if (err) {
     return console.error('could not connect to postgres', err);
   }
-  console.log(res.rows[0].now);
+  console.log(res.rows[0]);
 })
 
 
