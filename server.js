@@ -15,12 +15,11 @@ var session = require('express-session');
 // Database =======================================
 
 var db = require('./config/db');
-
 db.query('SELECT NOW()', null, (err, res) => {
   if (err) {
     return console.error('could not connect to postgres', err);
   }
-  console.log(res.rows[0].now);
+  console.log(res.rows[0]);
 })
 
 
@@ -37,7 +36,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 
-app.use(session({ secret: 'secret'}));
+app.use(session({
+  secret: 'secret',
+  resave: true,
+  saveUninitialized: true
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
