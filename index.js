@@ -35,11 +35,11 @@ app.get('/Home',function(req,res){
 app.get('/Profile',function(req,res){
   res.render('pages/Profile',{
     title: "Profile",
-    name: user_firstName+user_lastName,
-    username: user_username,
+    name: 'Na',
+    username: 'Na',
     study_status: "Not currently studying",
-    major: user_major,
-    year: user_year,
+    major: 'na',
+    year: 'na',
   });
 });
 
@@ -62,15 +62,15 @@ app.post('/',function(req,res){
 });
 
 app.post('/',function(req,res){
-  user_firstName: req.body.first_name;
-  user_lastName: req.body.last_name;
-  user_email: req.body.email_address;
-  user_username: req.body.username;
-  var dob = req.body.date_of_birth;
-  var password1 = req.body.password_first;
-  var password2 = req.body.password_confirm;
-  var user_major = req.body.major;
-  var user_year = req.body.year;
+  // var user_firstName = req.body.first_name;
+  // var user_lastName = req.body.last_name;
+  // var user_email = req.body.email_address;
+  // var user_username = req.body.username;
+  // var dob = req.body.date_of_birth;
+  // var password1 = req.body.password_first;
+  // var password2 = req.body.password_confirm;
+  // var user_major = req.body.major;
+  // var user_year = req.body.year;
   console.log(firstName+lastName); //testing this shit out
 
   res.redirect('/Home');

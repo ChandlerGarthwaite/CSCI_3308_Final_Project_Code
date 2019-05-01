@@ -1,17 +1,4 @@
-var pg = require('pg');
-
-//***Connection to Heroku Database
-var conString = process.env.DATABASE_URL;
-var client = new pg.Client(conString);
-
-//***Connection to local database***
-// var client = new pg.Client({
-//   user: 'harrisonayan',
-//   host: 'localhost',
-//   database: 'tap-study',
-//   password: 'harrison',
-//   port: 5432,
-// });
+const db = require('../config/db');
 
 Locations = new Object();
   Locations.benson = [];
@@ -32,19 +19,9 @@ Locations = new Object();
 
 
 Locations.getGroupInfo = function(callback) {
-  var conString = process.env.DATABASE_URL;
-  var client = new pg.Client(conString);
 
-  // var client = new pg.Client({
-  //   user: 'harrisonayan',
-  //   host: 'localhost',
-  //   database: 'tap-study',
-  //   password: 'harrison',
-  //   port: 5432,
-  // });
-  client.connect();
 
-  client.query('SELECT * FROM groups ORDER BY location', null, function(err, result) {
+  db.query('SELECT * FROM groups ORDER BY location', null, function(err, result) {
     if (err){
       return callback(err,this);
     }if(result.rows.length > 0){
@@ -80,25 +57,14 @@ Locations.getGroupInfo = function(callback) {
         }
       }
     }
-    client.end();
     return callback(false, Locations);
   });
 };
 
 Locations.getGroupId = function(subject, id,callback) {
-  var conString = process.env.DATABASE_URL;
-  var client = new pg.Client(conString);
 
-  // var client = new pg.Client({
-  //   user: 'harrisonayan',
-  //   host: 'localhost',
-  //   database: 'tap-study',
-  //   password: 'harrison',
-  //   port: 5432,
-  // });
-  client.connect();
   var currentGroup = false
-  client.query('SELECT * FROM groups WHERE subject=$1 AND location=$2',[subject, id], function(err, result) {
+  db.query('SELECT * FROM groups WHERE subject=$1 AND location=$2',[subject, id], function(err, result) {
     if(err){
       console.log(err);
       return callback(currentGroup,null);
