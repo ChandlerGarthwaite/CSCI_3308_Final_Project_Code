@@ -2,16 +2,18 @@ const { Pool } = require('pg');
 
 //****Connection to Heroku database
 //const conString = process.env.DATABASE_URL;
-//const pool = new Pool(conString);
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL;
+  });
 
 //****Connection to local database
-const pool = new Pool({
-  user: 'harrisonayan',
-    host: 'localhost',
-    database: 'tap-study',
-    password: 'harrison',
-    port: 5432,
-});
+// const pool = new Pool({
+//   user: 'harrisonayan',
+//     host: 'localhost',
+//     database: 'tap-study',
+//     password: 'harrison',
+//     port: 5432,
+// });
 
 //Node-postgres project structure
 module.exports = {
