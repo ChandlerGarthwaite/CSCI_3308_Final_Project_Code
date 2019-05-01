@@ -15,7 +15,6 @@ var session = require('express-session');
 // Database =======================================
 
 var db = require('./config/db');
-db.connect();
 db.query('SELECT NOW()', null, (err, res) => {
   if (err) {
     return console.error('could not connect to postgres', err);
