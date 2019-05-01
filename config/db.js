@@ -3,7 +3,7 @@ const { Pool } = require('pg');
 //****Connection to Heroku database
 //const conString = process.env.DATABASE_URL;
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL;
+  connectionString: process.env.DATABASE_URL
   });
 
 //****Connection to local database
