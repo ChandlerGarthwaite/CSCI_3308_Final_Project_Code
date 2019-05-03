@@ -20,7 +20,7 @@ Locations = new Object();
 
 Locations.getGroupInfo = function(callback) {
 
-
+  console.log('Locations.getGroupInfo');
   db.query('SELECT * FROM groups ORDER BY location', null, function(err, result) {
     if (err){
       return callback(err,this);
@@ -47,7 +47,6 @@ Locations.getGroupInfo = function(callback) {
           Locations.koelbelCount += result.rows[i]['members'].length;
         }
         if(result.rows[i]['location'] == 6){
-          console.log(result.rows[i]['members'].length + ' studying ' + result.rows[i]['subject'] );
           Locations.norlin.push(result.rows[i]['members'].length + ' people studying ' + result.rows[i]['subject'] );
           Locations.norlinCount += result.rows[i]['members'].length;
         }
@@ -62,17 +61,16 @@ Locations.getGroupInfo = function(callback) {
 };
 
 Locations.getGroupId = function(subject, id,callback) {
-
+  console.log('Locations.getGroupId');
   var currentGroup = false
   db.query('SELECT * FROM groups WHERE subject=$1 AND location=$2',[subject, id], function(err, result) {
-    if(err){
+    if (err) {
       console.log(err);
       return callback(currentGroup,null);
-    }if(result.rows.length>0){
-      currentGroup=true;
+    } if (result.rows.length>0) {
+      currentGroup = true;
       var group_id = result.rows[0]['group_id'];
-      console.log(group_id);
-      client.end()
+      console.log('group_id: ',group_id);
       return callback(currentGroup, group_id);
     }
     else{

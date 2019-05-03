@@ -22,6 +22,22 @@ db.query('SELECT NOW()', null, (err, res) => {
   console.log(res.rows[0]);
 })
 
+db.getClient(function(err, client, done){
+  if (err) throw err;
+  client.query('SELECT NOW()', null, (er, res) => {
+    done();
+    console.log()
+    if (er) {
+      return console.error('could not connect to postgres', er);
+    }
+
+    console.log(res.rows[0]);
+  });
+});
+
+
+
+
 
 // CONFIGURATION =====================================
 

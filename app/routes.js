@@ -115,8 +115,8 @@ module.exports = function(app, passport) {
     var location = req.body.locations;
     var subject = req.body.subjects;
     var user = req.user.user_id;
-    var user_id = [];
-    user_id.push(user);
+    var userArray = [];
+    userArray.push(user);
     var id = 0;
     if(location == 'Benson')
       id = 1;
@@ -143,13 +143,12 @@ module.exports = function(app, passport) {
             return err;
             console.log(err);
           } else {
-            client.end();
             res.redirect('/home');
           }
         });
       }
       else {
-        db.query('INSERT INTO groups(members,subject, location) VALUES($1,$2, $3)',[user_id,subject,id], function(err, result) {
+        db.query('INSERT INTO groups(members,subject, location) VALUES($1,$2, $3)',[userArray,subject,id], function(err, result) {
           if(err){
             return err;
             console.log(err);
