@@ -136,8 +136,8 @@ module.exports = function(app, passport) {
     console.log('get');
     Locations.getGroupId(subject, id, function(currentGroup, group_id) {
       console.log('ss');
-      console.log('group:' group_id);
-    
+      console.log('group:' ,group_id);
+
       if(currentGroup == true){
 
         db.query('UPDATE groups SET members = members || $1 WHERE group_id = $2',[id,group_id], function(err, result) {
