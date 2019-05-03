@@ -117,21 +117,21 @@ module.exports = function(app, passport) {
     var user = req.user.user_id;
     var userArray = [];
     userArray.push(user);
-    var id = {0};
+    var id = [];
     if(location == 'Benson')
-      id = {1};
+      id.push(1);
     if(location == 'CASE')
-      id = {2};
+      id.push(2);
     if(location == 'Engineering')
-      id = {3};
+      id.push(3);
     if(location == 'Gemmill')
-      id = {4};
+      id.push(4);
     if(location == 'KoelBel')
-      id = {5};
+      id.push(5);
     if(location == 'Norlin')
-      id = {6};
+      id.push(6);
     if(location == 'Wise')
-      id = {7};
+      id.push(7);
 
     console.log('get');
     Locations.getGroupId(subject, id, function(currentGroup, group_id) {
@@ -140,7 +140,7 @@ module.exports = function(app, passport) {
 
       if(currentGroup == true){
 
-        db.query('UPDATE groups SET members = members || $1 WHERE group_id = $2',[id,group_id], function(err, result) {
+        db.query('UPDATE groups SET members = members || $1 WHERE group_id = $2',[id[0],group_id], function(err, result) {
           if(err){
             console.log(err);
             return err;
