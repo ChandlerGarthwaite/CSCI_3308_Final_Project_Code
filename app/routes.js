@@ -142,8 +142,9 @@ module.exports = function(app, passport) {
 
         db.query('UPDATE groups SET members = members || $1 WHERE group_id = $2',[id,group_id], function(err, result) {
           if(err){
-            return err;
             console.log(err);
+            return err;
+            
           } else {
             res.redirect('/home');
           }
