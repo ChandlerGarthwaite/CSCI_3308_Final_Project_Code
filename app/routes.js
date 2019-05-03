@@ -119,19 +119,19 @@ module.exports = function(app, passport) {
     userArray.push(user);
     var id = [];
     if(location == 'Benson')
-      id.push(1);
+      id[0] = 1;
     if(location == 'CASE')
-      id.push(2);
+      id[0] = 2;
     if(location == 'Engineering')
-      id.push(3);
+      id[0] = 3;
     if(location == 'Gemmill')
-      id.push(4);
+      id[0] = 4;
     if(location == 'KoelBel')
-      id.push(5);
+      id[0] = 5;
     if(location == 'Norlin')
-      id.push(6);
+      id[0] = 6;
     if(location == 'Wise')
-      id.push(7);
+      id[0] = 7;
 
     console.log('get');
     Locations.getGroupId(subject, id, function(currentGroup, group_id) {
