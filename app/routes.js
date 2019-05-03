@@ -69,7 +69,7 @@ module.exports = function(app, passport) {
           if (study_status == false)
             study_status = 'Not Currently Studying';
           if (study_status == true)
-            study_status = 'Studying at' + req.user.studyLocation;
+            study_status = 'Studying Now';
           if (major == null)
             major = 'N.A.';
           if( grade == null)
@@ -125,31 +125,31 @@ module.exports = function(app, passport) {
     var id = 0;
     if(location == 'Benson'){
       id = 1;
-      req.user.studyLocation = "Benson Earth Sciences";
+      // req.user.studyLocation = "Benson Earth Sciences";
     }
     if(location == 'CASE'){
       id = 2;
-      req.user.studyLocation = "CASE Building";
+      // req.user.studyLocation = "CASE Building";
     }
     if(location == 'Engineering '){
       id = 3;
-      req.user.studyLocation = "Engineering Center";
+      // req.user.studyLocation = "Engineering Center";
     }
     if(location == 'Gemmill'){
       id = 4;
-      req.user.studyLocation = "Gemmill Math Library";
+      // req.user.studyLocation = "Gemmill Math Library";
     }
     if(location == 'KoelBel'){
       id = 5;
-      req.user.studyLocation = "KoelBel Business Library";
+      // req.user.studyLocation = "KoelBel Business Library";
     }
     if(location == 'Norlin'){
       id = 6;
-      req.user.studyLocation = "Norlin Library";
+      // req.user.studyLocation = "Norlin Library";
     }
     if(location == 'Wise'){
       id = 7;
-      req.user.studyLocation = "Wise Law Library"
+      // req.user.studyLocation = "Wise Law Library"
     }
     console.log('get');
     Locations.getGroupId(subject, id, function(currentGroup, group_id) {
