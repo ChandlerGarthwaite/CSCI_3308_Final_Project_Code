@@ -115,6 +115,11 @@ module.exports = function(app, passport) {
     var location = req.body.locations;
     var subject = req.body.subjects;
     var user = req.user.user_id;
+    db.query('UPDATE users SET study_status = $1 WHERE user_id = $2',[true, user], function(err){
+      if(err)
+        console.log(err);
+        return err;
+    });
     var userArray = [];
     userArray.push(user);
     var id = 0;
