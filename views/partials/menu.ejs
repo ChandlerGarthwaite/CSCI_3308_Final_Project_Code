@@ -45,6 +45,10 @@ color: #f6db77;
   height: 1500px;
 }
 
+.logoutNavbar a:hover{
+  background-color:#dc676b;
+  color:black;
+}
 </style>
 <div class="navbar">
 
@@ -52,7 +56,9 @@ color: #f6db77;
   <a href="/Home">Home</a>
   <a href="/Profile">Profile</a>
   <a href="#exampleModal" data-toggle="modal" data-target="#exampleModal">Check In</a>
-  <a href="/logout" style="border-right: none;">Log Out</a>
+  <div class="logoutNavbar">
+    <a href="/logout" style="border-right: none;">Log Out/Checkout</a>
+  </div>
 </div>
 
       <div class="modal" id="exampleModal" tabindex="-1" role="dialog">
