@@ -39,7 +39,8 @@ app.get('/Profile',function(req,res){
     username: 'Na',
     study_status: "Not currently studying",
     major: 'na',
-    year: 'na',
+    grade: 'na',
+    hometown:'na'
   });
 });
 
