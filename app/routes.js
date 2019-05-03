@@ -69,7 +69,7 @@ module.exports = function(app, passport) {
           if (study_status == false)
             study_status = 'Not Currently Studying';
           if (study_status == true)
-            study_status = 'Studying Now';
+            study_status = 'Studying at' + req.user.studyLocation;
           if (major == null)
             major = 'N.A.';
           if( grade == null)
