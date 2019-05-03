@@ -118,21 +118,34 @@ module.exports = function(app, passport) {
     var userArray = [];
     userArray.push(user);
     var id = 0;
-    if(location == 'Benson')
+    if(location == 'Benson'){
       id = 1;
-    if(location == 'CASE')
+      req.user.studyLocation = "Benson Earth Sciences";
+    }
+    if(location == 'CASE'){
       id = 2;
-    if(location == 'Engineering')
+      req.user.studyLocation = "CASE Building";
+    }
+    if(location == 'Engineering '){
       id = 3;
-    if(location == 'Gemmill')
+      req.user.studyLocation = "Engineering Center";
+    }
+    if(location == 'Gemmill'){
       id = 4;
-    if(location == 'KoelBel')
+      req.user.studyLocation = "Gemmill Math Library";
+    }
+    if(location == 'KoelBel'){
       id = 5;
-    if(location == 'Norlin')
+      req.user.studyLocation = "KoelBel Business Library";
+    }
+    if(location == 'Norlin'){
       id = 6;
-    if(location == 'Wise')
+      req.user.studyLocation = "Norlin Library";
+    }
+    if(location == 'Wise'){
       id = 7;
-
+      req.user.studyLocation = "Wise Law Library"
+    }
     console.log('get');
     Locations.getGroupId(subject, id, function(currentGroup, group_id) {
       console.log('ss');
@@ -164,6 +177,10 @@ module.exports = function(app, passport) {
   });
 
   app.get('/logout', function(req, res) {
+    var user = req.user.user_id;
+    var studyloc = req.user.studyLocation;
+    var studysub = req.user.studySubject;
+
     req.logout();
     res.redirect('/');
   });

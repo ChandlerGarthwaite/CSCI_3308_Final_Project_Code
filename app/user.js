@@ -3,7 +3,6 @@ const db = require('../config/db');
 function User(){
   this.user_id = 0;
   this.studyLocation = "";
-  this.studySubject = "";
   this.first_name = "";
   this.last_name = "";
   this.username = "";
