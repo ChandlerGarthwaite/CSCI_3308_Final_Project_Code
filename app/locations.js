@@ -21,6 +21,13 @@ Locations = new Object();
 Locations.getGroupInfo = function(callback) {
 
   console.log('Locations.getGroupInfo');
+  Locations.benson = [];
+  Locations.case_ = [];
+  Locations.engineering = [];
+  Locations.gemmill = [];
+  Locations.koelbel = [];
+  Locations.norlin = [];
+  Locations.wise = [];
   db.query('SELECT * FROM groups ORDER BY location', null, function(err, result) {
     if (err){
       return callback(err,this);
